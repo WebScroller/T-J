@@ -7,7 +7,7 @@
             super(imageString);
             this.sound = "explotion";
             this.reset();
-            this.name = "tom"; 
+            this.name = "cat"; 
         }  
 
         //private method*********************************************

@@ -59,12 +59,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\asteroid1.png" />
     <Content Include="assets\images\background.jpg" />
     <Content Include="assets\images\cheese.png" />
-    <Content Include="assets\images\energy.png" />
     <Content Include="assets\images\mouse.png" />
-    <Content Include="assets\images\plane.png" />
     <Content Include="assets\images\play.png" />
     <Content Include="assets\images\playAgain.png" />
     <Content Include="assets\images\cat.png" />
