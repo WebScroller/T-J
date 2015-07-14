@@ -59,7 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\background.jpg" />
+    <Content Include="assets\images\background1.png" />
     <Content Include="assets\images\cheese.png" />
     <Content Include="assets\images\mouse.png" />
     <Content Include="assets\images\play.png" />
@@ -106,7 +106,7 @@
     <TypeScriptCompile Include="scripts\objects\label.ts" />
     <TypeScriptCompile Include="scripts\objects\mouse.ts" />
     <TypeScriptCompile Include="scripts\objects\scoreboard.ts" />
-    <TypeScriptCompile Include="scripts\objects\space.ts" />
+    <TypeScriptCompile Include="scripts\objects\house.ts" />
     <TypeScriptCompile Include="scripts\states\intro.ts" />
     <TypeScriptCompile Include="scripts\states\over.ts" />
     <TypeScriptCompile Include="scripts\states\play.ts" />

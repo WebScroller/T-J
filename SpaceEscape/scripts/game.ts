@@ -8,7 +8,7 @@
 /// <reference path="utility/utility.ts" />
 /// <reference path="managers/assets.ts" />
 /// <reference path="objects/gameobject.ts" />
-/// <reference path="objects/space.ts" />
+/// <reference path="objects/house.ts" />
 /// <reference path="objects/mouse.ts" />
 /// <reference path="objects/cheese.ts" />
 /// <reference path="objects/cats.ts" />
@@ -40,7 +40,7 @@ var over: states.Over;
 var intro: states.Intro;
 
 //game variables
-var space: objects.Space;
+var house: objects.House;
 var mouse: objects.Mouse;
 var cheese: objects.Cheese;
 var cats: objects.Cats[] = [];

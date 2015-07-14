@@ -11,7 +11,7 @@ var managers;
             this.loader.installPlugin(createjs.Sound);
             this.loader.on("complete", init, this);
             this.loader.loadManifest([
-                { id: "space", src: "assets/images/background.jpg" },
+                { id: "house", src: "assets/images/background1.png" },
                 { id: "mouse", src: "assets/images/mouse.png" },
                 { id: "cheese", src: "assets/images/cheese.png" },
                 { id: "play", src: "assets/images/play.png" },

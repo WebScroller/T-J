@@ -7,7 +7,7 @@
 
         //update method
         public update() {
-            space.update();
+            house.update();
             mouse.update(); //look for the mouse to change position
             cheese.update(); //update the position of the cheese
 
@@ -30,8 +30,8 @@
             game = new createjs.Container();
 
             //add background
-            space = new objects.Space(assets.loader.getResult("space"));
-            game.addChild(space);
+            house = new objects.House(assets.loader.getResult("house"));
+            game.addChild(house);
 
             //add energy objects to stage
             cheese = new objects.Cheese(assets.loader.getResult("cheese"));

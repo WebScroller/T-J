@@ -19,11 +19,11 @@ module states {
             start = new createjs.Container();
                         
             //add background
-            space = new objects.Space(assets.loader.getResult("space"));
-            start.addChild(space);
+            house = new objects.House(assets.loader.getResult("house"));
+            start.addChild(house);
 
             //add title to screen
-            labelTitle = new objects.Label("Space Escape", "60px");
+            labelTitle = new objects.Label("T&J Chase", "60px");
             labelTitle.x = 126;
             labelTitle.y = 33;
             start.addChild(labelTitle);
