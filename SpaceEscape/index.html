@@ -1,0 +1,52 @@
+﻿<!--Author: Diego Rodriguez-->
+<!--App: Space Escape-->
+<!--Version: 1.0.0-->
+<!--Date: Diego Rodriguez-->
+<!--Author: July 5 2015-->
+<!--Description: T&J Final Project-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Escape</title>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+</head>
+
+<body onload="preload();">
+
+    <!--Game container-->
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <!--Javascript files-->
+    <script src="scripts/lib/Stats.js"></script>
+    <script src="scripts/lib/easeljs-0.8.0.min.js"></script>
+    <script src="scripts/lib/tweenjs-0.6.0.min.js"></script>
+    <script src="scripts/lib/soundjs-0.6.0.min.js"></script>
+    <script src="scripts/lib/preloadjs-0.6.0.min.js"></script>
+
+    <!--Game Objects-->
+    <script src="config/config.js"></script>
+    <script src="scripts/objects/label.js"></script>
+    <script src="scripts/objects/button.js"></script>
+    <script src="scripts/utility/utility.js"></script>
+    <script src="scripts/managers/assets.js"></script>
+    <script src="scripts/objects/gameObject.js"></script>
+    <script src="scripts/objects/space.js"></script>
+    <script src="scripts/objects/mouse.js"></script>
+    <script src="scripts/objects/cheese.js"></script>
+    <script src="scripts/objects/cats.js"></script>
+    <script src="scripts/objects/scoreboard.js"></script>
+    <script src="scripts/managers/collision.js"></script>
+
+    <!--Game States-->
+    <script src="scripts/states/intro.js"></script>
+    <script src="scripts/states/play.js"></script>
+    <script src="scripts/states/over.js"></script>
+
+    <!--Game Scripts-->
+    <script src="scripts/game.js"></script>
+
+</body>
+</html>
