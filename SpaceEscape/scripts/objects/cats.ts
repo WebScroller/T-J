@@ -23,7 +23,7 @@
             this.y = Math.floor((Math.random() * 480)); //start island at random location
             this.x = 640; //start enegy off stage
             this.dy = Math.floor(Math.random() * 4) - 2;
-            this.dx = Math.floor(Math.random() * 5) + 5;
+            this.dx = Math.floor(Math.random() * 5) + 5;           
         }
 
  

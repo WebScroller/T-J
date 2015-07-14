@@ -10,6 +10,7 @@
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/house.ts" />
 /// <reference path="objects/mouse.ts" />
+/// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
 /// <reference path="objects/cats.ts" />
 /// <reference path="objects/scoreboard.ts" />
@@ -27,6 +28,7 @@ var stage: createjs.Stage;
 var stats: Stats;
 
 
+
 //Game stages (containers)
 var game: createjs.Container;
 var gOver: createjs.Container; 
@@ -42,6 +44,7 @@ var intro: states.Intro;
 //game variables
 var house: objects.House;
 var mouse: objects.Mouse;
+var catchedMouse: objects.CatchedMouse;
 var cheese: objects.Cheese;
 var cats: objects.Cats[] = [];
 var scoreboard: objects.ScoreBord;
@@ -52,6 +55,7 @@ var labelText: objects.Label;
 var labelTitle: objects.Label;
 var labelInstru: objects.Label;
 var btnPlay: objects.Button;
+var catched: boolean = false;
 
 
 //game managers
@@ -75,7 +79,7 @@ function init() {
    currentStage = config.INRO_STATE;
   
     main();
-    //intr();
+  
 }
 
 //to show the stats of the FPS
@@ -94,33 +98,25 @@ function setupStats() {
 //Our main Game loop access 60 fps / runs on the back 
 function gameLoop() {
     stats.begin();
-    if (gameOver == 1) {        
+   if (gameOver == 1) {        
         play.update();
     } else if (gameOver == 2){
         currentStage = config.GAME_OVER_STATE
         main();
-    }      
+    }     
     stage.update(); //update/refresh state    
     stats.end();
 }
 
-//function of the intro screen
-function intr() {
-   //comment sound to have less loading time
-    // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
-    //intro = new states.Intro();
-    //the first stage to play 
-   // currentStateFunction = intro;
-    
-}
 
 //function that starts the playing the game
 function main() {
-    //instantiate play state conatainer
-    play = new states.Play();
     
+
+
     switch (currentStage) {
         case config.INRO_STATE:
+            // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
             intro = new states.Intro();
             currentStateFunction = intro;
             stage.addChild(start);
@@ -128,8 +124,8 @@ function main() {
 
         case config.PLAY_STATE:
             play = new states.Play();
-            currentStateFunction = play;
-            stage.addChild(game);
+            currentStateFunction = play;            
+            stage.addChild(game);            
             break;
 
         case config.GAME_OVER_STATE:

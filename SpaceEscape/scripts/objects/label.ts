@@ -3,7 +3,7 @@
     export class Label extends createjs.Text {
         //Contrsuctor***************************  
         constructor(text: string, size: string) {
-            super(text, size + " Consolas", "#28E90F");            
+            super(text, "bold " + size + " arial", "#FF0404");            
         }
     }
 } 

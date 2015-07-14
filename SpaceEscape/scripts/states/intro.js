@@ -18,12 +18,14 @@ var states;
             house = new objects.House(assets.loader.getResult("house"));
             start.addChild(house);
             //add title to screen
-            labelTitle = new objects.Label("T&J Chase", "60px");
+            labelTitle = new objects.Label("T&J Chase", "80px");
+            labelTitle.shadow = new createjs.Shadow("#FFFF00", 5, 5, 10);
             labelTitle.x = 126;
             labelTitle.y = 33;
             start.addChild(labelTitle);
             //add instructions to screen 
             labelInstru = new objects.Label("Instructions: " + instructions, "30px");
+            labelInstru.shadow = new createjs.Shadow("#FFFF00", 5, 5, 10);
             labelInstru.x = 30;
             labelInstru.y = 134;
             start.addChild(labelInstru);

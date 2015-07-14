@@ -6,8 +6,10 @@ var objects;
             //public properties 
             this.score = 0;
             this.lives = 5;
-            this.livesLabel = new createjs.Text("Lives:", "40px Consolas", "#28E90F");
-            this.scoreLabel = new createjs.Text("Score:", "40px Consolas", "#28E90F");
+            this.livesLabel = new createjs.Text("Lives:", "40px Consolas", "#FF0404");
+            this.livesLabel.shadow = new createjs.Shadow("#FFFF00", 5, 5, 10);
+            this.scoreLabel = new createjs.Text("Score:", "40px Consolas", "#FF0404");
+            this.scoreLabel.shadow = new createjs.Shadow("#FFFF00", 5, 5, 10);
             this.scoreLabel.x = 350;
             game.addChild(this.livesLabel);
             game.addChild(this.scoreLabel);

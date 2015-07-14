@@ -11,7 +11,7 @@ var objects;
         __extends(Label, _super);
         //Contrsuctor***************************  
         function Label(text, size) {
-            _super.call(this, text, size + " Consolas", "#28E90F");
+            _super.call(this, text, "bold " + size + " arial", "#FF0404");
         }
         return Label;
     })(createjs.Text);

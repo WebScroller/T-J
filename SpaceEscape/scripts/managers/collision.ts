@@ -25,11 +25,17 @@
                         gameOver = 2;                        
                     } else {
                         scoreboard.lives--;
+                        game.removeChild(mouse);
+                        catched = true;
+                        game.addChild(catchedMouse);
+
+
                     }
                 }
                 //if is the energy 
                 if (gameObject.name == "cheese") {
-                    scoreboard.score += 100;
+                    scoreboard.score += 100;                    
+                    game.removeChild(cheese);
                    
                 }
             }

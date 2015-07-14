@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\background1.png" />
+    <Content Include="assets\images\catchedMouse.png" />
     <Content Include="assets\images\cheese.png" />
     <Content Include="assets\images\mouse.png" />
     <Content Include="assets\images\play.png" />
@@ -99,6 +100,7 @@
     <TypeScriptCompile Include="scripts\game.ts" />
     <TypeScriptCompile Include="scripts\managers\assets.ts" />
     <TypeScriptCompile Include="scripts\managers\collision.ts" />
+    <TypeScriptCompile Include="scripts\objects\catchedMouse.ts" />
     <TypeScriptCompile Include="scripts\objects\cats.ts" />
     <TypeScriptCompile Include="scripts\objects\button.ts" />
     <TypeScriptCompile Include="scripts\objects\cheese.ts" />

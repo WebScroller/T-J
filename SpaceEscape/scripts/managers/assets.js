@@ -13,6 +13,7 @@ var managers;
             this.loader.loadManifest([
                 { id: "house", src: "assets/images/background1.png" },
                 { id: "mouse", src: "assets/images/mouse.png" },
+                { id: "catchedMouse", src: "assets/images/catchedMouse.png" },
                 { id: "cheese", src: "assets/images/cheese.png" },
                 { id: "play", src: "assets/images/play.png" },
                 { id: "playAgain", src: "assets/images/playAgain.png" },
@@ -21,7 +22,6 @@ var managers;
                 { id: "explotion", src: "assets/sounds/explotion.wav" },
                 { id: "planeS", src: "assets/sounds/plane.wav" },
                 { id: "gameOverS", src: "assets/sounds/gameOver.wav" },
-                { id: "music", src: "assets/sounds/music.mp3" },
             ]);
         };
         return Assets;

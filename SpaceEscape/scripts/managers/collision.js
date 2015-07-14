@@ -24,11 +24,15 @@ var managers;
                         }
                         else {
                             scoreboard.lives--;
+                            game.removeChild(mouse);
+                            catched = true;
+                            game.addChild(catchedMouse);
                         }
                     }
                     //if is the energy 
                     if (gameObject.name == "cheese") {
                         scoreboard.score += 100;
+                        game.removeChild(cheese);
                     }
                 }
                 gameObject.isColliding = true;

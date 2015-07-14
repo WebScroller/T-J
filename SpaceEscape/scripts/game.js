@@ -9,6 +9,7 @@
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/house.ts" />
 /// <reference path="objects/mouse.ts" />
+/// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
 /// <reference path="objects/cats.ts" />
 /// <reference path="objects/scoreboard.ts" />
@@ -33,6 +34,7 @@ var intro;
 //game variables
 var house;
 var mouse;
+var catchedMouse;
 var cheese;
 var cats = [];
 var scoreboard;
@@ -43,6 +45,7 @@ var labelText;
 var labelTitle;
 var labelInstru;
 var btnPlay;
+var catched = false;
 //game managers
 var collision;
 var assets;
@@ -60,7 +63,6 @@ function init() {
     //set you current stage 
     currentStage = config.INRO_STATE;
     main();
-    //intr();
 }
 //to show the stats of the FPS
 function setupStats() {
@@ -85,20 +87,11 @@ function gameLoop() {
     stage.update(); //update/refresh state    
     stats.end();
 }
-//function of the intro screen
-function intr() {
-    //comment sound to have less loading time
-    // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
-    //intro = new states.Intro();
-    //the first stage to play 
-    // currentStateFunction = intro;
-}
 //function that starts the playing the game
 function main() {
-    //instantiate play state conatainer
-    play = new states.Play();
     switch (currentStage) {
         case config.INRO_STATE:
+            // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
             intro = new states.Intro();
             currentStateFunction = intro;
             stage.addChild(start);

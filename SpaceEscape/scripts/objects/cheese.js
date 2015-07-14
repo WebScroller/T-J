@@ -19,19 +19,21 @@ var objects;
         }
         //private method
         Cheese.prototype.checkBounds = function () {
-            //check if energy has left the screen then reset
+            //check if cheese has left the screen then reset
             if (this.x <= 0 - this.width) {
+                //outOfState = true;
                 this.reset();
             }
         };
         //to reset the energy when is off of stage
         Cheese.prototype.reset = function () {
-            this.y = Math.floor((Math.random() * 380) + this.height); //start energy at random location
+            this.y = Math.floor((Math.random() * 380) + this.height); //start energy at random location            
             this.x = 1800; //start enegy off stage
+            game.addChild(cheese);
         };
         //public methods************************************
         Cheese.prototype.update = function () {
-            this.x -= this.dx; //moves the energy
+            this.x -= this.dx; //moves the cheese
             this.checkBounds();
         };
         return Cheese;
