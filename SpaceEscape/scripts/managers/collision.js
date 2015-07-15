@@ -15,8 +15,9 @@ var managers;
             //if the objects are close...
             if (utility.distance(p1, p2) < ((mouse.height * 0.5) + (gameObject.height * 0.3))) {
                 if (gameObject.isColliding == false) {
+                    console.log(gameObject.name);
                     createjs.Sound.play(gameObject.sound);
-                    //if is the asteroid 
+                    //if is the cat
                     if (gameObject.name == "cat") {
                         if (scoreboard.lives < 2) {
                             //To know that the game is over
@@ -24,15 +25,13 @@ var managers;
                         }
                         else {
                             scoreboard.lives--;
-                            game.removeChild(mouse);
+                            //game.removeChild(mouse);
                             catched = true;
-                            game.addChild(catchedMouse);
                         }
                     }
-                    //if is the energy 
+                    //if is the cheese
                     if (gameObject.name == "cheese") {
                         scoreboard.score += 100;
-                        game.removeChild(cheese);
                     }
                 }
                 gameObject.isColliding = true;

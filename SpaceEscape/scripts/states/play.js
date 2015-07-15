@@ -9,6 +9,8 @@ var states;
         Play.prototype.update = function () {
             house.update();
             if (catched) {
+                game.removeChild(mouse);
+                game.addChild(catchedMouse);
                 catchedMouse.update();
                 setTimeout(function () {
                     catched = false;
@@ -51,6 +53,8 @@ var states;
             }
             //add scoreboard 
             scoreboard = new objects.ScoreBord();
+            game.addChild(scoreboard.livesLabel);
+            game.addChild(scoreboard.scoreLabel);
             //add collision manager
             collision = new managers.Collision();
         };

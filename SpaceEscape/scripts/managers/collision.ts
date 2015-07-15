@@ -1,7 +1,8 @@
 ﻿module managers {
     export class Collision {
+        
         //Constructor************************************
-        constructor() {
+        constructor(){            
         }
         
         //public method to check the distance between objects 
@@ -14,28 +15,30 @@
         p2.x = gameObject.x;
         p2.y = gameObject.y;
 
+
         //if the objects are close...
         if (utility.distance(p1, p2) < ((mouse.height * 0.5) + (gameObject.height * 0.3))) {
             if (gameObject.isColliding == false) {
+                console.log(gameObject.name);
                 createjs.Sound.play(gameObject.sound);
-                //if is the asteroid 
+                //if is the cat
                 if (gameObject.name == "cat") {
                     if (scoreboard.lives < 2) {  
                         //To know that the game is over
                         gameOver = 2;                        
                     } else {
                         scoreboard.lives--;
-                        game.removeChild(mouse);
+                        //game.removeChild(mouse);
                         catched = true;
-                        game.addChild(catchedMouse);
+                        //game.addChild(catchedMouse);
 
 
                     }
                 }
-                //if is the energy 
+                //if is the cheese
                 if (gameObject.name == "cheese") {
                     scoreboard.score += 100;                    
-                    game.removeChild(cheese);
+                   // game.removeChild(cheese);
                    
                 }
             }

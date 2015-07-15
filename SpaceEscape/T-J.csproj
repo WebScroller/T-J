@@ -60,8 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\background1.png" />
+    <Content Include="assets\images\cat3.png" />
     <Content Include="assets\images\catchedMouse.png" />
     <Content Include="assets\images\cheese.png" />
+    <Content Include="assets\images\background3.png" />
     <Content Include="assets\images\mouse.png" />
     <Content Include="assets\images\play.png" />
     <Content Include="assets\images\playAgain.png" />
@@ -109,7 +111,9 @@
     <TypeScriptCompile Include="scripts\objects\mouse.ts" />
     <TypeScriptCompile Include="scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="scripts\objects\house.ts" />
+    <TypeScriptCompile Include="scripts\states\garden.ts" />
     <TypeScriptCompile Include="scripts\states\intro.ts" />
+    <TypeScriptCompile Include="scripts\states\kitchen.ts" />
     <TypeScriptCompile Include="scripts\states\over.ts" />
     <TypeScriptCompile Include="scripts\states\play.ts" />
     <TypeScriptCompile Include="scripts\typings\createjs-lib\createjs-lib.d.ts" />

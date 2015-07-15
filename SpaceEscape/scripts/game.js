@@ -16,55 +16,67 @@
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/intro.ts" />
 /// <reference path="states/play.ts" />
+/// <reference path="states/garden.ts" />
 /// <reference path="states/over.ts" />
-//game framework variables 
+//Game Framework Variables 
 var canvas = document.getElementById("canvas");
 var stage;
 var stats;
-//Game stages (containers)
-var game;
-var gOver;
+//Game States Variables (Containers)
 var start;
-var currentStateFunction; //save the current state i'm in
-var currentStage; // the number of each screen
-//Game states (Classes)
-var play;
-var over;
+var game;
+var level_2;
+var level_3;
+var gOver;
+//Game states Variables (Classes)
 var intro;
-//game variables
+var play;
+var kitchen;
+var garden;
+var over;
+//Help know your current stage 
+var currentStateFunction; //save the current state i'm in  probably not neceseary 
+var currentStage; // the number of each screen
+var gameOver = 0;
+//Object variables
+var background3;
 var house;
 var mouse;
 var catchedMouse;
 var cheese;
 var cats = [];
+var cats2 = [];
 var scoreboard;
-var gameOver = 0;
+//Botton Variables
 var btnPlayAgain;
+var btnPlay;
+//Label Varaibles
 var labelScore;
 var labelText;
 var labelTitle;
 var labelInstru;
-var btnPlay;
+//Logic Variables
 var catched = false;
-//game managers
+//Game Manage Variables
 var collision;
 var assets;
-//preload function
+//PRELOAD FUNCTION
 function preload() {
     assets = new managers.Assets();
     setupStats();
 }
-//Everything starts here
+//INIT FUNCTION (everything starts here)
 function init() {
     stage = new createjs.Stage(canvas);
     stage.enableMouseOver(20); //make the mouse known
     createjs.Ticker.setFPS(60); //framerate for the game 
     createjs.Ticker.on("tick", gameLoop); //same like useEventListener, every tick access the gameLoop function
-    //set you current stage 
-    currentStage = config.INRO_STATE;
+    //SET YOUR CURRENT STAGE
+    //currentStage = config.INRO_STATE; //commented for test
+    currentStage = config.LEVEL_3;
     main();
 }
-//to show the stats of the FPS
+//SHOW STATS (FPS)
 function setupStats() {
     stats = new Stats();
     stats.setMode(0);
@@ -77,6 +89,7 @@ function setupStats() {
 //Our main Game loop access 60 fps / runs on the back 
 function gameLoop() {
     stats.begin();
+    garden.update();
     if (gameOver == 1) {
         play.update();
     }
@@ -93,13 +106,19 @@ function main() {
         case config.INRO_STATE:
             // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
             intro = new states.Intro();
-            currentStateFunction = intro;
+            currentStateFunction = intro; //probably not necesary 
             stage.addChild(start);
             break;
         case config.PLAY_STATE:
             play = new states.Play();
-            currentStateFunction = play;
+            currentStateFunction = play; //probably not necesary 
             stage.addChild(game);
+            break;
+        case config.LEVEL_2:
+            break;
+        case config.LEVEL_3:
+            garden = new states.Garden();
+            stage.addChild(level_3);
             break;
         case config.GAME_OVER_STATE:
             createjs.Sound.stop();

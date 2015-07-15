@@ -25,7 +25,7 @@
         private reset(): void {
             this.y = Math.floor((Math.random() * 380) + this.height); //start energy at random location            
             this.x = 1800; //start enegy off stage
-            game.addChild(cheese);
+            //game.addChild(cheese);
         }
 
 

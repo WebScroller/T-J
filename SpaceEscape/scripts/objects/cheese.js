@@ -29,7 +29,7 @@ var objects;
         Cheese.prototype.reset = function () {
             this.y = Math.floor((Math.random() * 380) + this.height); //start energy at random location            
             this.x = 1800; //start enegy off stage
-            game.addChild(cheese);
+            //game.addChild(cheese);
         };
         //public methods************************************
         Cheese.prototype.update = function () {
