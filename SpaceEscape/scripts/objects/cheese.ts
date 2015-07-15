@@ -1,8 +1,8 @@
 ﻿module objects {
-    //Cheese class *******************************
+    //CHEESE CLASS*******************************************************************************************************
     export class Cheese extends objects.GameObject {
 
-        //Constructor**************************
+        //CONSTRUCTOR*****************************************************************************************************
         constructor(imageString: string) {
             super(imageString);
             this.dx = 5;
@@ -11,26 +11,27 @@
             this.name = "cheese";        
         }
 
-        //private method
+        //PRIVATE METHODS*************************************************************************************************
+
+        //CHECK IF THE CHEESE HAS LEFT THE SCREEN, THEN RESET
         private checkBounds(): void {
-            //check if cheese has left the screen then reset
             if (this.x <= 0 - this.width) {
                 gotCheese = false;
                 this.reset();
-
             }
         }
 
-        //to reset the energy when is off of stage
+        //RESET THE CHEESE WHEN IS OUT OF STAGE
         private reset(): void {
-            this.y = Math.floor((Math.random() * 380) + this.height); //start energy at random location            
-            this.x = 1800; //start enegy off stage            
+            this.y = Math.floor((Math.random() * 380) + this.height); //THE CHEESE STARTS AT A RANDOM LOCATION           
+            this.x = 1800;                                            //THE CHEESE STARTS OUT OF STAGE          
         }
 
+        //PUBLIC METHODS**************************************************************************************************
 
-        //public methods************************************
+        //MOVE THE CHEESE ACROSS THE SCREEN
         public update(): void {
-                this.x -= this.dx; //moves the cheese
+                this.x -= this.dx; 
                 this.checkBounds();
         }
      }

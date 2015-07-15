@@ -30,10 +30,15 @@
                         catched = true;
                     }
                 }
-                //if is the cheese
+                //IF COLLISION IS WITH CHEESE
                 if (gameObject.name == "cheese") {
                     scoreboard.score += 100;  
                     gotCheese = true;                
+                }
+                
+                //IF COLLISION IS WITH WHISTLE
+                if (gameObject.name == "whistle") {
+                    gotWhistle = true;
                 }
             }
             gameObject.isColliding = true;

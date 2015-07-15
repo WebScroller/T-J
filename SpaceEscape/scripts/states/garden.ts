@@ -49,8 +49,22 @@
                 collision.check(cats2[cat]);
             }   
 
+            //WHISTLE UPDATE
+            if (gotWhistle) {                    //IF THE MOUSE GOT THE WHISTLE
+                level_3.removeChild(whistle);    //REMOVE WHISTLE FORM SATGE
+                whistle.update();                //CONTINUE UPDATING THE WHISTLE
+
+            } else {                            //IF THE WHISTLE WAS NOT GOTTEN 
+                if (!level_3.contains(whistle))  //IF THE WHISTLE IS NOT IN STAGE, ADD IT
+                    level_3.addChild(whistle);
+                whistle.update()                 //CONTINUE UPDATING THE WHISTLE
+            }
+
             //CHECK CHEESE COLLISION
             collision.check(cheese);
+
+            //CHECK WHISTLE COLLISION
+            collision.check(whistle);
 
             //UPDATE SCOREBOARD
             scoreboard.update();
@@ -69,7 +83,7 @@
             background = new objects.Background(assets.loader.getResult("garden"));
             level_3.addChild(background);
             
-            //INSTANTIATE & ADD BACKGROUND TO STAGE
+            //INSTANTIATE & ADD CHEESE TO STAGE
             cheese = new objects.Cheese(assets.loader.getResult("cheese"));
             level_3.addChild(cheese);
 
@@ -92,6 +106,10 @@
                 cats2[cat] = new objects.Cats(assets.loader.getResult("cat"));
                 level_3.addChild(cats2[cat]);
             }
+
+            //INSTANTIATE & ADD WHISTLE TO STAGE
+            whistle = new objects.Whistle(assets.loader.getResult("whistle"));
+            level_3.addChild(whistle);
 
             ////INSTANTIATE COLLITION MANAGER
             collision = new managers.Collision();

@@ -47,7 +47,7 @@ module states {
             stage.removeChild(start);
             start.removeAllChildren();
             start.removeAllEventListeners();
-            currentStage = config.PLAY_STATE
+            currentStage = config.LEVEL_3 //STATE GO AFTER CLICK BUTTON START
             gameOver = 1;
             main();
         }

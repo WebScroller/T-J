@@ -11,6 +11,7 @@
 /// <reference path="objects/mouse.ts" />
 /// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
+/// <reference path="objects/whistle.ts" />
 /// <reference path="objects/cats.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="managers/collision.ts" />
@@ -18,27 +19,28 @@
 /// <reference path="states/play.ts" />
 /// <reference path="states/garden.ts" />
 /// <reference path="states/over.ts" />
-//Game Framework Variables 
+//VARAIBLES **************************************************************************************************************
+//GAME FRAMEWORK VARAIBLES
 var canvas = document.getElementById("canvas");
 var stage;
 var stats;
-//Game States Variables (Containers)
+//GAME STATES VARIABLES (CONTAINERS)
 var start;
 var game;
 var level_2;
 var level_3;
 var gOver;
-//Game states Variables (Classes)
+//GAME STATES VARIABLES (CLASSES)
 var intro;
 var play;
 var kitchen;
 var garden;
 var over;
-//Help know your current stage 
+//HELP KNOW YOUR CURRENT STAGE
 var currentStateFunction; //save the current state i'm in  probably not neceseary 
-var currentStage; // the number of each screen
+var currentStage; // THE NUMBER OF EACH SCREEN
 var gameOver = 0;
-//Object variables
+//OBJECT VARIABLES
 var background;
 var mouse;
 var catchedMouse;
@@ -46,37 +48,38 @@ var cheese;
 var cats = [];
 var cats2 = [];
 var scoreboard;
-//Botton Variables
+var whistle;
+//BOTTON VARIABLES
 var btnPlayAgain;
 var btnPlay;
-//Label Varaibles
+//LABEL VARIABLES
 var labelScore;
 var labelText;
 var labelTitle;
 var labelInstru;
-//Logic Variables
+//LOGIC VARAIABLES
 var catched = false;
 var gotCheese = false;
-//Game Manage Variables
+var gotWhistle = false;
+//GAME MANAGE VARIABLES
 var collision;
 var assets;
-//PRELOAD FUNCTION
+//PRELOAD FUNCTION**********************************************************************************************************
 function preload() {
     assets = new managers.Assets();
     setupStats();
 }
-//INIT FUNCTION (everything starts here)
+//INIT FUNCTION (MAGIC STARTS HERE)*****************************************************************************************
 function init() {
     stage = new createjs.Stage(canvas);
     stage.enableMouseOver(20); //make the mouse known
     createjs.Ticker.setFPS(60); //framerate for the game 
     createjs.Ticker.on("tick", gameLoop); //same like useEventListener, every tick access the gameLoop function
     //SET YOUR CURRENT STAGE
-    //currentStage = config.INRO_STATE; //commented for test
-    currentStage = config.LEVEL_3;
+    currentStage = config.INRO_STATE;
     main();
 }
-//SHOW STATS (FPS)
+//SHOW STATS (FPS)***********************************************************************************************************
 function setupStats() {
     stats = new Stats();
     stats.setMode(0);
@@ -86,12 +89,12 @@ function setupStats() {
     stats.domElement.style.top = '0px';
     document.body.appendChild(stats.domElement);
 }
-//Our main Game loop access 60 fps / runs on the back 
+//MAIN GAME LOOP ACCESS 60 FPS***********************************************************************************************
 function gameLoop() {
     stats.begin();
-    garden.update();
     if (gameOver == 1) {
-        play.update();
+        //play.update();
+        garden.update();
     }
     else if (gameOver == 2) {
         currentStage = config.GAME_OVER_STATE;
@@ -100,7 +103,7 @@ function gameLoop() {
     stage.update(); //update/refresh state    
     stats.end();
 }
-//function that starts the playing the game
+//SELECT STATE*************************************************************************************************************
 function main() {
     switch (currentStage) {
         case config.INRO_STATE:
