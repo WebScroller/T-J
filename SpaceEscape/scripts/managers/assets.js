@@ -17,6 +17,7 @@ var managers;
                 { id: "catchedMouse", src: "assets/images/catchedMouse.png" },
                 { id: "cheese", src: "assets/images/cheese.png" },
                 { id: "whistle", src: "assets/images/whistle.png" },
+                { id: "dog", src: "assets/images/dog.png" },
                 { id: "play", src: "assets/images/play.png" },
                 { id: "playAgain", src: "assets/images/playAgain.png" },
                 { id: "cat", src: "assets/images/cat.png" },

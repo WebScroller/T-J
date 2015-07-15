@@ -108,6 +108,7 @@
     <TypeScriptCompile Include="scripts\objects\cats.ts" />
     <TypeScriptCompile Include="scripts\objects\button.ts" />
     <TypeScriptCompile Include="scripts\objects\cheese.ts" />
+    <TypeScriptCompile Include="scripts\objects\dog.ts" />
     <TypeScriptCompile Include="scripts\objects\gameObject.ts" />
     <TypeScriptCompile Include="scripts\objects\label.ts" />
     <TypeScriptCompile Include="scripts\objects\mouse.ts" />

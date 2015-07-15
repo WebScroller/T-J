@@ -1,6 +1,6 @@
 ﻿module objects {
-    //WHISTLE CLASS*******************************************************************************************************
-    export class Whistle extends objects.GameObject {
+    //DOG CLASS*******************************************************************************************************
+    export class Dog extends objects.GameObject {
 
         //CONSTRUCTOR*****************************************************************************************************
         constructor(imageString: string) {
@@ -8,31 +8,32 @@
             this.dx = 5;
             //this.sound = "energyS";
             this.reset();
-            this.name = "whistle";
+            this.name = "dog";
+            console.log(this.name);
         }
 
         //PRIVATE METHODS*************************************************************************************************
 
-        //CHECK IF THE WHISTLE HAS LEFT THE SCREEN, THEN RESET
+        //CHECK IF THE DOG HAS LEFT THE SCREEN, THEN RESET
         private checkBounds(): void {
-            if (this.x <= 0 - this.width) {
-                gotWhistle = false;
+            if (this.x >= 640 + this.width) {
                 this.reset();
             }
         }
 
-        //RESET THE WHISTLE WHEN IS OUT OF STAGE
+        //RESET THE DOG WHEN IS OUT OF STAGE
         private reset(): void {
-            this.y = Math.floor((Math.random() * 380) + this.height); //THE WHISTLE STARTS AT A RANDOM LOCATION           
-            this.x = 4000;                                            //THE WHISTLE STARTS OUT OF STAGE          
+            this.y = Math.floor((Math.random() * 380) + this.height); //THE DOG STARTS AT A RANDOM LOCATION           
+            this.x = -80;                                            //THE DOG STARTS OUT OF STAGE    
+            level_3.removeChild(dog);      
         }
 
         //PUBLIC METHODS**************************************************************************************************
 
-        //MOVE THE WHISTLE ACROSS THE SCREEN
+        //MOVE THE DOG ACROSS THE SCREEN
         public update(): void {
-            this.x -= this.dx;
+            this.x += this.dx;
             this.checkBounds();
         }
     }
-} 
+}  

@@ -12,6 +12,7 @@
 /// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
 /// <reference path="objects/whistle.ts" />
+/// <reference path="objects/dog.ts" />
 /// <reference path="objects/cats.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="managers/collision.ts" />
@@ -49,6 +50,7 @@ var cats = [];
 var cats2 = [];
 var scoreboard;
 var whistle;
+var dog;
 //BOTTON VARIABLES
 var btnPlayAgain;
 var btnPlay;

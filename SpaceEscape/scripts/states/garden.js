@@ -46,6 +46,7 @@ var states;
             //WHISTLE UPDATE
             if (gotWhistle) {
                 level_3.removeChild(whistle); //REMOVE WHISTLE FORM SATGE
+                level_3.addChild(dog);
                 whistle.update(); //CONTINUE UPDATING THE WHISTLE
             }
             else {
@@ -53,6 +54,9 @@ var states;
                     level_3.addChild(whistle);
                 whistle.update(); //CONTINUE UPDATING THE WHISTLE
             }
+            //DOG UPDATE
+            if (level_3.contains(dog))
+                dog.update();
             //CHECK CHEESE COLLISION
             collision.check(cheese);
             //CHECK WHISTLE COLLISION
@@ -89,6 +93,8 @@ var states;
             //INSTANTIATE & ADD WHISTLE TO STAGE
             whistle = new objects.Whistle(assets.loader.getResult("whistle"));
             level_3.addChild(whistle);
+            //INSTANTIATE THE DOG TO STAGE
+            dog = new objects.Dog(assets.loader.getResult("dog"));
             ////INSTANTIATE COLLITION MANAGER
             collision = new managers.Collision();
             ////INSTANTIATE & ADD SCOREBOARD TO THE STAGE 

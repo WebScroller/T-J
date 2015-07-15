@@ -16,7 +16,6 @@ var objects;
             //this.sound = "energyS";
             this.reset();
             this.name = "whistle";
-            console.log("se invoca");
         }
         //PRIVATE METHODS*************************************************************************************************
         //CHECK IF THE WHISTLE HAS LEFT THE SCREEN, THEN RESET
