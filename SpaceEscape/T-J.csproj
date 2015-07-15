@@ -110,7 +110,7 @@
     <TypeScriptCompile Include="scripts\objects\label.ts" />
     <TypeScriptCompile Include="scripts\objects\mouse.ts" />
     <TypeScriptCompile Include="scripts\objects\scoreboard.ts" />
-    <TypeScriptCompile Include="scripts\objects\house.ts" />
+    <TypeScriptCompile Include="scripts\objects\background.ts" />
     <TypeScriptCompile Include="scripts\states\garden.ts" />
     <TypeScriptCompile Include="scripts\states\intro.ts" />
     <TypeScriptCompile Include="scripts\states\kitchen.ts" />

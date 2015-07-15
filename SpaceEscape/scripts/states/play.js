@@ -7,7 +7,8 @@ var states;
         }
         //update method
         Play.prototype.update = function () {
-            house.update();
+            //UPDATE BACKGROUND
+            background.update();
             //MOUSE UPDATE
             if (catched) {
                 game.removeChild(mouse); //REMOVE THE MOUSE FROM STAGE
@@ -48,8 +49,8 @@ var states;
             //instantiate new game conatainer
             game = new createjs.Container();
             //add background
-            house = new objects.House(assets.loader.getResult("house"));
-            game.addChild(house);
+            background = new objects.Background(assets.loader.getResult("house"));
+            game.addChild(background);
             //add energy objects to stage
             cheese = new objects.Cheese(assets.loader.getResult("cheese"));
             game.addChild(cheese);

@@ -15,8 +15,8 @@ var states;
             console.log("Intro");
             start = new createjs.Container();
             //add background
-            house = new objects.House(assets.loader.getResult("house"));
-            start.addChild(house);
+            background = new objects.Background(assets.loader.getResult("house"));
+            start.addChild(background);
             //add title to screen
             labelTitle = new objects.Label("T&J Chase", "80px");
             labelTitle.shadow = new createjs.Shadow("#FFFF00", 5, 5, 10);

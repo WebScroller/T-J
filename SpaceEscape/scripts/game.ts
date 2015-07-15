@@ -9,7 +9,7 @@
 /// <reference path="managers/assets.ts" />
 
 /// <reference path="objects/gameobject.ts" />
-/// <reference path="objects/house.ts" />
+/// <reference path="objects/background.ts" />
 /// <reference path="objects/mouse.ts" />
 /// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
@@ -54,8 +54,7 @@ var gameOver: number = 0;
 
 
 //Object variables
-var background3: objects.House;
-var house: objects.House;
+var background: objects.Background;
 var mouse: objects.Mouse;
 var catchedMouse: objects.CatchedMouse;
 var cheese: objects.Cheese;

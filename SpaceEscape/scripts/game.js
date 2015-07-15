@@ -7,7 +7,7 @@
 /// <reference path="utility/utility.ts" />
 /// <reference path="managers/assets.ts" />
 /// <reference path="objects/gameobject.ts" />
-/// <reference path="objects/house.ts" />
+/// <reference path="objects/background.ts" />
 /// <reference path="objects/mouse.ts" />
 /// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
@@ -39,8 +39,7 @@ var currentStateFunction; //save the current state i'm in  probably not necesear
 var currentStage; // the number of each screen
 var gameOver = 0;
 //Object variables
-var background3;
-var house;
+var background;
 var mouse;
 var catchedMouse;
 var cheese;

@@ -13,8 +13,8 @@ var states;
             console.log("Game is Over");
             gOver = new createjs.Container();
             //add background
-            house = new objects.House(assets.loader.getResult("house"));
-            gOver.addChild(house);
+            background = new objects.Background(assets.loader.getResult("house"));
+            gOver.addChild(background);
             //add text Game over
             labelText = new objects.Label("Game Over!", "80px");
             labelText.x = 120;

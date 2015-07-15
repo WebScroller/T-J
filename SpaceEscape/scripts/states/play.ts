@@ -7,7 +7,9 @@
 
         //update method
         public update() {
-            house.update();
+
+            //UPDATE BACKGROUND
+            background.update();
 
             //MOUSE UPDATE
             if (catched) {                          //IF THE MOUSE GET CATCHED
@@ -56,8 +58,8 @@
             game = new createjs.Container();
 
             //add background
-            house = new objects.House(assets.loader.getResult("house"));
-            game.addChild(house);
+            background = new objects.Background(assets.loader.getResult("house"));
+            game.addChild(background);
 
             //add energy objects to stage
             cheese = new objects.Cheese(assets.loader.getResult("cheese"));

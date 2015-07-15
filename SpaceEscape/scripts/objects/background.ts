@@ -1,6 +1,6 @@
 ﻿module objects {
     //house class *******************************
-    export class House extends createjs.Bitmap {
+    export class Background extends createjs.Bitmap {
         //Public properties **************************
         width: number;
         height: number;
@@ -14,7 +14,7 @@
         
         //private method
         private checkBounds(): void {
-            //check if house has left the screen then reset
+            //check if background has left the screen then reset
             if (this.x <= -1280) {
                 this.reset();
             }
@@ -27,7 +27,7 @@
         
         //public methods************************************
         public update(): void {
-            this.x -= this.dx; //moves the house
+            this.x -= this.dx; //moves the background
             this.checkBounds();
         }
     }
