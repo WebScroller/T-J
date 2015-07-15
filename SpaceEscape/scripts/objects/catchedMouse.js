@@ -17,7 +17,6 @@ var objects;
         //public methods************************************
         CatchedMouse.prototype.update = function () {
             this.y = stage.mouseY; //position of the plain over the mouse
-            console.log("tesY");
         };
         return CatchedMouse;
     })(objects.GameObject);

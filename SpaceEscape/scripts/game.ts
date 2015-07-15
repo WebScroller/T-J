@@ -78,6 +78,7 @@ var labelInstru: objects.Label;
 
 //Logic Variables
 var catched: boolean = false;
+var gotCheese: boolean = false;
 
 
 //Game Manage Variables

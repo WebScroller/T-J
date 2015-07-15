@@ -15,7 +15,7 @@
         private checkBounds(): void {
             //check if cheese has left the screen then reset
             if (this.x <= 0 - this.width) {
-                //outOfState = true;
+                gotCheese = false;
                 this.reset();
 
             }
@@ -24,8 +24,7 @@
         //to reset the energy when is off of stage
         private reset(): void {
             this.y = Math.floor((Math.random() * 380) + this.height); //start energy at random location            
-            this.x = 1800; //start enegy off stage
-            //game.addChild(cheese);
+            this.x = 1800; //start enegy off stage            
         }
 
 

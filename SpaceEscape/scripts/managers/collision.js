@@ -15,7 +15,6 @@ var managers;
             //if the objects are close...
             if (utility.distance(p1, p2) < ((mouse.height * 0.5) + (gameObject.height * 0.3))) {
                 if (gameObject.isColliding == false) {
-                    console.log(gameObject.name);
                     createjs.Sound.play(gameObject.sound);
                     //if is the cat
                     if (gameObject.name == "cat") {
@@ -25,13 +24,13 @@ var managers;
                         }
                         else {
                             scoreboard.lives--;
-                            //game.removeChild(mouse);
                             catched = true;
                         }
                     }
                     //if is the cheese
                     if (gameObject.name == "cheese") {
                         scoreboard.score += 100;
+                        gotCheese = true;
                     }
                 }
                 gameObject.isColliding = true;

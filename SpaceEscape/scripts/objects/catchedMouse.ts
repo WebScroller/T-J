@@ -11,7 +11,6 @@
         //public methods************************************
         public update(): void {
             this.y = stage.mouseY;  //position of the plain over the mouse
-            console.log("tesY");
         }
 
     }

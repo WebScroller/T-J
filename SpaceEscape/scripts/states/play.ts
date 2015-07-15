@@ -8,34 +8,44 @@
         //update method
         public update() {
             house.update();
-            if (catched) {
-                game.removeChild(mouse);
-                game.addChild(catchedMouse); 
-                catchedMouse.update();
-                setTimeout(function () {
-                catched = false;
-                game.removeChild(catchedMouse);
-                game.addChild(mouse);
-                }, 500);
 
+            //MOUSE UPDATE
+            if (catched) {                          //IF THE MOUSE GET CATCHED
+                game.removeChild(mouse);         //REMOVE THE MOUSE FROM STAGE
+                game.addChild(catchedMouse);     //ADD CATCHED MOUSE TO STAGE
+                catchedMouse.update();              //UPDATE CATCHED MOUSE
+                setTimeout(function () {            //TIME FUNCTION FOR THE CATCHED MOUSE IN STAGE
+                    catched = false;
+                    game.removeChild(catchedMouse); //WHEN COUNTER FINISH REMOVE CATCHED MOUSE
+                    game.addChild(mouse);
+                }, 500);
             } else {
-                mouse.update(); //look for the mouse to change position
+                mouse.update();                     //IF THE MOUSE HAS NOT BEEN CATCHED UPDATE MOUSE
             }
             
-            cheese.update(); //update the position of the cheese
+            //CHEESE UPDATE
+            if (gotCheese) {                    //IF THE MOUSE GOT THE CHEESE
+                game.removeChild(cheese);    //REMOVE CHEESE FORM SATGE
+                cheese.update();                //CONTINUE UPDATING THE CHEESE
 
+            } else {                            //IF THE CHEESE WAS NOT GOTTEN 
+                if (!game.contains(cheese))  //IF THE CHEESE IS NOT IN STAGE, ADD IT
+                    game.addChild(cheese);
+                cheese.update()                 //CONTINUE UPDATING THE CHEESE
+            }
 
-
+            //CAT 1  UPDATE
             for (var cat = 0; cat < 3; cat++) {
                 cats[cat].update();
-                collision.check(cats[cat]);
-                
+                collision.check(cats[cat]);                
             }   
-            //update the scoreboard
+
+            //CHECK CHEESE COLLISION
+            collision.check(cheese);
+
+            //UPDATE SCOREBOARD
             scoreboard.update();
 
-            //checkCollision(cheese);
-            collision.check(cheese);
         }
 
         //our main game function

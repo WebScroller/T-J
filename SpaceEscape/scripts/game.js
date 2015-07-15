@@ -57,6 +57,7 @@ var labelTitle;
 var labelInstru;
 //Logic Variables
 var catched = false;
+var gotCheese = false;
 //Game Manage Variables
 var collision;
 var assets;

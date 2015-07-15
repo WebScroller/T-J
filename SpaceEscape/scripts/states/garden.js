@@ -5,36 +5,48 @@ var states;
         function Garden() {
             this.main();
         }
-        //update method
+        //UPDATE METHOD
         Garden.prototype.update = function () {
-            //   mouse.update(); //look for the mouse to change position
-            cheese.update();
-            for (var cat = 0; cat < 3; cat++) {
-                cats[cat].update();
-                collision.check(cats[cat]);
-            }
-            for (var cat = 0; cat < 3; cat++) {
-                cats2[cat].update();
-                collision.check(cats2[cat]);
-            }
-            //checkCollision(cheese);
-            collision.check(cheese);
-            //update the scoreboard
-            scoreboard.update();
-            //house.update();
+            house.update();
+            //MOUSE UPDATE
             if (catched) {
-                level_3.removeChild(mouse);
-                level_3.addChild(catchedMouse);
-                catchedMouse.update();
+                level_3.removeChild(mouse); //REMOVE THE MOUSE FROM STAGE
+                level_3.addChild(catchedMouse); //ADD CATCHED MOUSE TO STAGE
+                catchedMouse.update(); //UPDATE CATCHED MOUSE
                 setTimeout(function () {
                     catched = false;
-                    level_3.removeChild(catchedMouse);
+                    level_3.removeChild(catchedMouse); //WHEN COUNTER FINISH REMOVE CATCHED MOUSE
                     level_3.addChild(mouse);
                 }, 500);
             }
             else {
-                mouse.update(); //look for the mouse to change position
+                mouse.update(); //IF THE MOUSE HAS NOT BEEN CATCHED UPDATE MOUSE
             }
+            //CHEESE UPDATE
+            if (gotCheese) {
+                level_3.removeChild(cheese); //REMOVE CHEESE FORM SATGE
+                cheese.update(); //CONTINUE UPDATING THE CHEESE
+            }
+            else {
+                if (!level_3.contains(cheese))
+                    level_3.addChild(cheese);
+                cheese.update(); //CONTINUE UPDATING THE CHEESE
+            }
+            //CAT 1  UPDATE
+            for (var cat = 0; cat < 3; cat++) {
+                cats[cat].update();
+                collision.check(cats[cat]);
+            }
+            //CAT 2  UPDATE
+            for (var cat = 0; cat < 3; cat++) {
+                cats2[cat].update();
+                collision.check(cats2[cat]);
+            }
+            //CHECK CHEESE COLLISION
+            collision.check(cheese);
+            //UPDATE SCOREBOARD
+            scoreboard.update();
+            //house.update();
             /*
                         cheese.update(); //update the position of the cheese
             
@@ -57,8 +69,8 @@ var states;
             //instantiate new game conatainer
             level_3 = new createjs.Container();
             //add background
-            background3 = new objects.House(assets.loader.getResult("garden"));
-            level_3.addChild(background3);
+            house = new objects.House(assets.loader.getResult("garden"));
+            level_3.addChild(house);
             //add cheese objects to stage
             cheese = new objects.Cheese(assets.loader.getResult("cheese"));
             level_3.addChild(cheese);

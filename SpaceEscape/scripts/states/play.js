@@ -8,28 +8,39 @@ var states;
         //update method
         Play.prototype.update = function () {
             house.update();
+            //MOUSE UPDATE
             if (catched) {
-                game.removeChild(mouse);
-                game.addChild(catchedMouse);
-                catchedMouse.update();
+                game.removeChild(mouse); //REMOVE THE MOUSE FROM STAGE
+                game.addChild(catchedMouse); //ADD CATCHED MOUSE TO STAGE
+                catchedMouse.update(); //UPDATE CATCHED MOUSE
                 setTimeout(function () {
                     catched = false;
-                    game.removeChild(catchedMouse);
+                    game.removeChild(catchedMouse); //WHEN COUNTER FINISH REMOVE CATCHED MOUSE
                     game.addChild(mouse);
                 }, 500);
             }
             else {
-                mouse.update(); //look for the mouse to change position
+                mouse.update(); //IF THE MOUSE HAS NOT BEEN CATCHED UPDATE MOUSE
             }
-            cheese.update(); //update the position of the cheese
+            //CHEESE UPDATE
+            if (gotCheese) {
+                game.removeChild(cheese); //REMOVE CHEESE FORM SATGE
+                cheese.update(); //CONTINUE UPDATING THE CHEESE
+            }
+            else {
+                if (!game.contains(cheese))
+                    game.addChild(cheese);
+                cheese.update(); //CONTINUE UPDATING THE CHEESE
+            }
+            //CAT 1  UPDATE
             for (var cat = 0; cat < 3; cat++) {
                 cats[cat].update();
                 collision.check(cats[cat]);
             }
-            //update the scoreboard
-            scoreboard.update();
-            //checkCollision(cheese);
+            //CHECK CHEESE COLLISION
             collision.check(cheese);
+            //UPDATE SCOREBOARD
+            scoreboard.update();
         };
         //our main game function
         Play.prototype.main = function () {
