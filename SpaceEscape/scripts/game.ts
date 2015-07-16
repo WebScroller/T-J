@@ -35,7 +35,7 @@ var stats: Stats;
 
 //GAME STATES VARIABLES (CONTAINERS)
 var start: createjs.Container;
-var game: createjs.Container;
+var level_1: createjs.Container;
 var level_2: createjs.Container;
 var level_3: createjs.Container;
 var gOver: createjs.Container; 
@@ -50,7 +50,6 @@ var over: states.Over;
 
 
 //HELP KNOW YOUR CURRENT STAGE
-var currentStateFunction: any;    //save the current state i'm in  probably not neceseary 
 var currentStage: number;         // THE NUMBER OF EACH SCREEN
 var gameOver: number = 0;
 
@@ -130,8 +129,8 @@ function gameLoop() {
    if (gameOver == 1) {        
        //play.update();
        garden.update();
-    } else if (gameOver == 2){
-        currentStage = config.GAME_OVER_STATE
+   } else if (gameOver == 4) {
+       currentStage = config.GAME_OVER_STATE //STATE GO AFTER CLICK BUTTON START
         main();
     }     
     stage.update(); //update/refresh state    
@@ -145,14 +144,12 @@ function main() {
         case config.INRO_STATE:
             // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
             intro = new states.Intro();
-            currentStateFunction = intro;  //probably not necesary 
             stage.addChild(start);
         break;
 
-        case config.PLAY_STATE:
+        case config.LEVEL_1:
             play = new states.Play();
-            currentStateFunction = play;      //probably not necesary 
-            stage.addChild(game);            
+            stage.addChild(level_1);            
             break;
 
         case config.LEVEL_2:
@@ -170,9 +167,9 @@ function main() {
             //comment sound to have less loading time
             //createjs.Sound.play("music", { "loop": -1, "volume": .1 });
             gameOver = 3;
-            stage.removeChild(game);
-            game.removeAllChildren();
-            game.removeAllEventListeners();
+            stage.removeChild(level_3);
+            level_3.removeAllChildren();
+            level_3.removeAllEventListeners();
             over = new states.Over();
             stage.addChild(gOver);
             break;

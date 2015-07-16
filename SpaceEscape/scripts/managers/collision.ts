@@ -25,7 +25,7 @@
                 if (gameObject1.name == "mouse" && gameObject2.name == "cat") {
                     if (scoreboard.lives < 2) {  
                         //To know that the game is over
-                        gameOver = 2;
+                        gameOver = 4;
                     } else {
                         scoreboard.lives--;
                         catched = true;

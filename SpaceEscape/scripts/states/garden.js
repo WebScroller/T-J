@@ -36,7 +36,6 @@ var states;
             //CAT 1  UPDATE
             for (var cat = 0; cat < 3; cat++) {
                 if (level_3.contains(dog)) {
-                    console.log(collision.checkDC(dog, cats[cat]));
                     cats[cat].update();
                     collision.checkMC(mouse, cats[cat]);
                     collision.checkDC(dog, cats[cat]);

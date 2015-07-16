@@ -60,11 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\background1.png" />
+    <Content Include="assets\images\backIntro.png" />
     <Content Include="assets\images\cat3.png" />
     <Content Include="assets\images\catchedMouse.png" />
     <Content Include="assets\images\cheese.png" />
     <Content Include="assets\images\background3.png" />
     <Content Include="assets\images\dog.png" />
+    <Content Include="assets\images\mainBack.png" />
     <Content Include="assets\images\mouse.png" />
     <Content Include="assets\images\play.png" />
     <Content Include="assets\images\playAgain.png" />

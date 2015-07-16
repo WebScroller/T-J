@@ -43,8 +43,8 @@ module states {
             stage.removeChild(gOver);
             gOver.removeAllChildren();
             gOver.removeAllEventListeners();
-            gameOver = 1;
-            currentStage = config.PLAY_STATE;
+            gameOver = 0;
+            currentStage = config.INRO_STATE;
             main();
         }
         

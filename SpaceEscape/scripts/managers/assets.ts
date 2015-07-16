@@ -17,6 +17,7 @@
                 { id: "house", src: "assets/images/background1.png" },
                 { id: "garden", src: "assets/images/background3.png" },
                 { id: "mouse", src: "assets/images/mouse.png" },
+                { id: "backIntro", src: "assets/images/backIntro.png" },
                 { id: "catchedMouse", src: "assets/images/catchedMouse.png" },
                 { id: "cheese", src: "assets/images/cheese.png" },
                 { id: "whistle", src: "assets/images/whistle.png" },

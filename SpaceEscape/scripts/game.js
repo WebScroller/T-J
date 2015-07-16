@@ -27,7 +27,7 @@ var stage;
 var stats;
 //GAME STATES VARIABLES (CONTAINERS)
 var start;
-var game;
+var level_1;
 var level_2;
 var level_3;
 var gOver;
@@ -38,7 +38,6 @@ var kitchen;
 var garden;
 var over;
 //HELP KNOW YOUR CURRENT STAGE
-var currentStateFunction; //save the current state i'm in  probably not neceseary 
 var currentStage; // THE NUMBER OF EACH SCREEN
 var gameOver = 0;
 //OBJECT VARIABLES
@@ -98,8 +97,8 @@ function gameLoop() {
         //play.update();
         garden.update();
     }
-    else if (gameOver == 2) {
-        currentStage = config.GAME_OVER_STATE;
+    else if (gameOver == 4) {
+        currentStage = config.GAME_OVER_STATE; //STATE GO AFTER CLICK BUTTON START
         main();
     }
     stage.update(); //update/refresh state    
@@ -111,13 +110,11 @@ function main() {
         case config.INRO_STATE:
             // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
             intro = new states.Intro();
-            currentStateFunction = intro; //probably not necesary 
             stage.addChild(start);
             break;
-        case config.PLAY_STATE:
+        case config.LEVEL_1:
             play = new states.Play();
-            currentStateFunction = play; //probably not necesary 
-            stage.addChild(game);
+            stage.addChild(level_1);
             break;
         case config.LEVEL_2:
             break;
@@ -131,9 +128,9 @@ function main() {
             //comment sound to have less loading time
             //createjs.Sound.play("music", { "loop": -1, "volume": .1 });
             gameOver = 3;
-            stage.removeChild(game);
-            game.removeAllChildren();
-            game.removeAllEventListeners();
+            stage.removeChild(level_3);
+            level_3.removeAllChildren();
+            level_3.removeAllEventListeners();
             over = new states.Over();
             stage.addChild(gOver);
             break;
