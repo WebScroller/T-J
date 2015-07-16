@@ -6,6 +6,7 @@
         constructor(imageString: string) {
             super(imageString);
             this.x = 55;
+            this.name = "mouse"; 
         }
 
         //public methods************************************

@@ -12,7 +12,7 @@ var objects;
         //Constructor**************************
         function Background(imageString) {
             _super.call(this, imageString);
-            this.dx = 2;
+            this.dx = 3;
             this.x = 0;
             this.y = 0;
         }

@@ -26,6 +26,7 @@ var objects;
         //reset function when the cat leave stage
         Cats.prototype.reset = function () {
             this.y = Math.floor((Math.random() * 480)); //start cat at random location
+            this.x = Math.floor(Math.random() * 100) + 640;
             this.x = 640; //start cat off stage
             this.dy = Math.floor(Math.random() * 4) - 2;
             this.dx = Math.floor(Math.random() * 5) + 5;

@@ -35,13 +35,28 @@ var states;
             }
             //CAT 1  UPDATE
             for (var cat = 0; cat < 3; cat++) {
-                cats[cat].update();
-                collision.check(cats[cat]);
+                if (level_3.contains(dog)) {
+                    console.log(collision.checkDC(dog, cats[cat]));
+                    cats[cat].update();
+                    collision.checkMC(mouse, cats[cat]);
+                    collision.checkDC(dog, cats[cat]);
+                }
+                else {
+                    cats[cat].update();
+                    collision.checkMC(mouse, cats[cat]);
+                }
             }
             //CAT 2  UPDATE
             for (var cat = 0; cat < 3; cat++) {
-                cats2[cat].update();
-                collision.check(cats2[cat]);
+                if (level_3.contains(dog)) {
+                    cats2[cat].update();
+                    collision.checkMC(mouse, cats2[cat]);
+                    collision.checkDC(dog, cats2[cat]);
+                }
+                else {
+                    cats2[cat].update();
+                    collision.checkMC(mouse, cats2[cat]);
+                }
             }
             //WHISTLE UPDATE
             if (gotWhistle) {
@@ -55,12 +70,13 @@ var states;
                 whistle.update(); //CONTINUE UPDATING THE WHISTLE
             }
             //DOG UPDATE
-            if (level_3.contains(dog))
+            if (level_3.contains(dog)) {
                 dog.update();
+            }
             //CHECK CHEESE COLLISION
-            collision.check(cheese);
+            collision.checkMC(mouse, cheese);
             //CHECK WHISTLE COLLISION
-            collision.check(whistle);
+            collision.checkMC(mouse, whistle);
             //UPDATE SCOREBOARD
             scoreboard.update();
         };

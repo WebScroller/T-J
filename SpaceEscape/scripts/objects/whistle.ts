@@ -5,7 +5,7 @@
         //CONSTRUCTOR*****************************************************************************************************
         constructor(imageString: string) {
             super(imageString);
-            this.dx = 5;
+            this.dx = 7;
             //this.sound = "energyS";
             this.reset();
             this.name = "whistle";
@@ -24,7 +24,7 @@
         //RESET THE WHISTLE WHEN IS OUT OF STAGE
         private reset(): void {
             this.y = Math.floor((Math.random() * 380) + this.height); //THE WHISTLE STARTS AT A RANDOM LOCATION           
-            this.x = 4000;                                            //THE WHISTLE STARTS OUT OF STAGE          
+            this.x = 5000;                                            //THE WHISTLE STARTS OUT OF STAGE          
         }
 
         //PUBLIC METHODS**************************************************************************************************

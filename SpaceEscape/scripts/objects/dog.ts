@@ -2,14 +2,14 @@
     //DOG CLASS*******************************************************************************************************
     export class Dog extends objects.GameObject {
 
+
         //CONSTRUCTOR*****************************************************************************************************
         constructor(imageString: string) {
             super(imageString);
-            this.dx = 5;
+            this.dx = 4;
             //this.sound = "energyS";
             this.reset();
             this.name = "dog";
-            console.log(this.name);
         }
 
         //PRIVATE METHODS*************************************************************************************************

@@ -39,11 +39,11 @@
             //CAT 1  UPDATE
             for (var cat = 0; cat < 3; cat++) {
                 cats[cat].update();
-                collision.check(cats[cat]);                
+                collision.checkMC(mouse, cats[cat]);                
             }   
 
             //CHECK CHEESE COLLISION
-            collision.check(cheese);
+            collision.checkMC(mouse, cheese);
 
             //UPDATE SCOREBOARD
             scoreboard.update();
@@ -73,7 +73,7 @@
 
             //add cat object to the stage
             for (var cat = 0; cat < 3; cat++) {
-               cats[cat] = new objects.Cats(assets.loader.getResult("cat"));
+                cats[cat] = new objects.Cats(assets.loader.getResult("cat"));
                 game.addChild(cats[cat]);
             }
 

@@ -4,6 +4,7 @@
         public width: number;
         public height: number;
         public isColliding: boolean = false;
+        public isColliding2: boolean = false;
         public sound: string = "";
         public name: string = "";
 

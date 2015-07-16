@@ -13,6 +13,7 @@ var objects;
         function Mouse(imageString) {
             _super.call(this, imageString);
             this.x = 55;
+            this.name = "mouse";
         }
         //public methods************************************
         Mouse.prototype.update = function () {

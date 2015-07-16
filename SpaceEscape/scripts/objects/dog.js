@@ -12,11 +12,10 @@ var objects;
         //CONSTRUCTOR*****************************************************************************************************
         function Dog(imageString) {
             _super.call(this, imageString);
-            this.dx = 5;
+            this.dx = 4;
             //this.sound = "energyS";
             this.reset();
             this.name = "dog";
-            console.log(this.name);
         }
         //PRIVATE METHODS*************************************************************************************************
         //CHECK IF THE DOG HAS LEFT THE SCREEN, THEN RESET

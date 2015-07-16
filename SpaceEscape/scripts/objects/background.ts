@@ -4,7 +4,7 @@
         //Public properties **************************
         width: number;
         height: number;
-        dx: number = 2;
+        dx: number = 3;
         //Constructor**************************
         constructor(imageString: string) {
             super(imageString);
