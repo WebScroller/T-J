@@ -10,9 +10,9 @@
         //Contrsuctor***************************  
         constructor() {
             this.livesLabel = new createjs.Text("Lives:", "40px Consolas", "#FF0404");
-            this.livesLabel.shadow = new createjs.Shadow("#FFFF00", 5, 5, 10);
+            this.livesLabel.shadow = new createjs.Shadow("#005C57", 5, 5, 10);
             this.scoreLabel = new createjs.Text("Score:", "40px Consolas", "#FF0404");
-            this.scoreLabel.shadow = new createjs.Shadow("#FFFF00", 5, 5, 10);
+            this.scoreLabel.shadow = new createjs.Shadow("#005C57", 5, 5, 10);
             this.scoreLabel.x = 350;
         }
 

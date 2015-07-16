@@ -93,7 +93,10 @@ function setupStats() {
 //MAIN GAME LOOP ACCESS 60 FPS***********************************************************************************************
 function gameLoop() {
     stats.begin();
-    if (gameOver == 1) {
+    if (gameOver == 0) {
+        intro.update();
+    }
+    else if (gameOver == 1) {
         //play.update();
         garden.update();
     }

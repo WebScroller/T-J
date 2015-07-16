@@ -125,10 +125,12 @@ function setupStats() {
 //MAIN GAME LOOP ACCESS 60 FPS***********************************************************************************************
 function gameLoop() {    
     stats.begin();
-    
-   if (gameOver == 1) {        
+    if (gameOver == 0) {
+        intro.update();
+    }else if (gameOver == 1) {        
        //play.update();
-       garden.update();
+        garden.update();
+        //kitchen.update();
    } else if (gameOver == 4) {
        currentStage = config.GAME_OVER_STATE //STATE GO AFTER CLICK BUTTON START
         main();
@@ -153,7 +155,8 @@ function main() {
             break;
 
         case config.LEVEL_2:
-
+            kitchen = new states.Kitchen();
+            stage.addChild(level_2);
             break;
 
         case config.LEVEL_3:

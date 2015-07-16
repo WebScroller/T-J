@@ -13,20 +13,22 @@ var states;
             console.log("Game is Over");
             gOver = new createjs.Container();
             //add background
-            background = new objects.Background(assets.loader.getResult("house"));
+            background = new objects.Background(assets.loader.getResult("backIntro"));
             gOver.addChild(background);
             //add text Game over
             labelText = new objects.Label("Game Over!", "80px");
+            labelText.shadow = new createjs.Shadow("#005C57", 5, 5, 10);
             labelText.x = 120;
             labelText.y = 70;
             gOver.addChild(labelText);
             //add score
             labelScore = new objects.Label("Your score is: " + scoreboard.score, "40px");
+            labelScore.shadow = new createjs.Shadow("#005C57", 5, 5, 10);
             labelScore.x = 120;
             labelScore.y = 200;
             gOver.addChild(labelScore);
             //add btn to play again
-            btnPlayAgain = new objects.Button(220, 325, assets.loader.getResult("playAgain"));
+            btnPlayAgain = new objects.Button(200, 325, assets.loader.getResult("playAgain"));
             gOver.addChild(btnPlayAgain);
             btnPlayAgain.addEventListener("click", this.tryAgainClicked);
         };
