@@ -13,6 +13,7 @@
 /// <reference path="objects/mouse.ts" />
 /// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
+/// <reference path="objects/mousetrap.ts" />
 /// <reference path="objects/whistle.ts" />
 /// <reference path="objects/dog.ts" />
 /// <reference path="objects/cats.ts" />
@@ -21,6 +22,7 @@
 
 /// <reference path="states/intro.ts" />
 /// <reference path="states/play.ts" />
+/// <reference path="states/kitchen.ts" />
 /// <reference path="states/garden.ts" />
 
 /// <reference path="states/over.ts" />
@@ -59,6 +61,7 @@ var background: objects.Background;
 var mouse: objects.Mouse;
 var catchedMouse: objects.CatchedMouse;
 var cheese: objects.Cheese;
+var mouseTrap: objects.MouseTrap[] = [];
 var cats: objects.Cats[] = [];
 var cats2: objects.Cats[] = [];
 var scoreboard: objects.ScoreBord;
@@ -129,8 +132,8 @@ function gameLoop() {
         intro.update();
     }else if (gameOver == 1) {        
        //play.update();
-        garden.update();
-        //kitchen.update();
+       //garden.update();
+        kitchen.update();
    } else if (gameOver == 4) {
        currentStage = config.GAME_OVER_STATE //STATE GO AFTER CLICK BUTTON START
         main();
@@ -169,10 +172,10 @@ function main() {
             createjs.Sound.play("gameOverS");
             //comment sound to have less loading time
             //createjs.Sound.play("music", { "loop": -1, "volume": .1 });
-            gameOver = 3;
-            stage.removeChild(level_3);
-            level_3.removeAllChildren();
-            level_3.removeAllEventListeners();
+            gameOver = 2;
+            stage.removeChild(level_2);
+            level_2.removeAllChildren();
+            level_2.removeAllEventListeners();
             over = new states.Over();
             stage.addChild(gOver);
             break;

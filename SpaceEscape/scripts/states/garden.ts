@@ -28,7 +28,7 @@ module states {
         
             //CHEESE UPDATE
             if (gotCheese) {                    //IF THE MOUSE GOT THE CHEESE
-                level_3.removeChild(cheese);    //REMOVE CHEESE FORM SATGE
+                level_3.removeChild(cheese);    //REMOVE CHEESE FROM STAGE
                 cheese.update();                //CONTINUE UPDATING THE CHEESE
 
             } else {                            //IF THE CHEESE WAS NOT GOTTEN 

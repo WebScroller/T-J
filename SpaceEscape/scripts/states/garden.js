@@ -25,7 +25,7 @@ var states;
             }
             //CHEESE UPDATE
             if (gotCheese) {
-                level_3.removeChild(cheese); //REMOVE CHEESE FORM SATGE
+                level_3.removeChild(cheese); //REMOVE CHEESE FROM STAGE
                 cheese.update(); //CONTINUE UPDATING THE CHEESE
             }
             else {

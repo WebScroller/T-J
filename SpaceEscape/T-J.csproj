@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\background1.png" />
+    <Content Include="assets\images\background2.png" />
     <Content Include="assets\images\backIntro.png" />
     <Content Include="assets\images\backIntro3.png" />
     <Content Include="assets\images\cat2.png" />
@@ -71,6 +72,7 @@
     <Content Include="assets\images\dog.png" />
     <Content Include="assets\images\mainBack.png" />
     <Content Include="assets\images\mouse.png" />
+    <Content Include="assets\images\mousetrap.png" />
     <Content Include="assets\images\play.png" />
     <Content Include="assets\images\cat.png" />
     <Content Include="assets\images\playAgain.png" />
@@ -117,6 +119,7 @@
     <TypeScriptCompile Include="scripts\objects\gameObject.ts" />
     <TypeScriptCompile Include="scripts\objects\label.ts" />
     <TypeScriptCompile Include="scripts\objects\mouse.ts" />
+    <TypeScriptCompile Include="scripts\objects\mouseTrap.ts" />
     <TypeScriptCompile Include="scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="scripts\objects\background.ts" />
     <TypeScriptCompile Include="scripts\objects\whistle.ts" />

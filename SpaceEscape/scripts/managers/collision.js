@@ -43,7 +43,39 @@ var managers;
                 gameObject2.isColliding = false;
             }
         };
-        //PUBLIC METHOD TO CHECK COLITIONS BETWEEN DOG AND CAT *********************************************************************************************
+        //PUBLIC METHOD TO CHECK COLLISIONS BETWEEN MOUSE AND MOUSETRAP *********************************************************************************************
+        Collision.prototype.checkMT = function (gameObject1, gameObject2) {
+            var p1 = new createjs.Point();
+            var p2 = new createjs.Point();
+            p1.x = gameObject1.x;
+            p1.y = gameObject1.y;
+            p2.x = gameObject2.x;
+            p2.y = gameObject2.y;
+            //if the objects are close...
+            if (utility.distance(p1, p2) < ((gameObject1.height * 0.5) + (gameObject2.height * 0.3))) {
+                if (gameObject2.isColliding == false) {
+                    createjs.Sound.play(gameObject1.sound);
+                    //IF COLLISION IS BETWEEN MOUSE & CAT
+                    if (gameObject1.name == "mouse" && gameObject2.name == "mouseTrap") {
+                        if (scoreboard.lives < 2) {
+                            //To know that the game is over
+                            gameOver = 4;
+                        }
+                        else {
+                            scoreboard.lives--;
+                            catched = true;
+                        }
+                    }
+                }
+                gameObject2.isColliding = true;
+                return false;
+            }
+            else {
+                gameObject2.isColliding = false;
+                return false;
+            }
+        };
+        //PUBLIC METHOD TO CHECK COLLISIONS BETWEEN DOG AND CAT *********************************************************************************************
         Collision.prototype.checkDC = function (gameObject1, gameObject2) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();

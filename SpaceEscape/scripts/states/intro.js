@@ -44,7 +44,7 @@ var states;
             stage.removeChild(start);
             start.removeAllChildren();
             start.removeAllEventListeners();
-            currentStage = config.LEVEL_3; //STATE GO AFTER CLICK BUTTON START
+            currentStage = config.LEVEL_2; //STATE GO AFTER CLICK BUTTON START
             gameOver = 1;
             main();
         };
