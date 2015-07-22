@@ -12,7 +12,7 @@ var objects;
         //Constructor**************************
         function Cats(imageString) {
             _super.call(this, imageString);
-            this.sound = "explotion";
+            this.sound = "catch";
             this.reset();
             this.name = "cat";
         }

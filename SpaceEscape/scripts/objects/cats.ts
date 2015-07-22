@@ -5,7 +5,7 @@
          //Constructor**************************
         constructor(imageString: string) {
             super(imageString);
-            this.sound = "explotion";
+            this.sound = "catch";
             this.reset();
             this.name = "cat"; 
         }  

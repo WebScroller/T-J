@@ -30,16 +30,9 @@ module states {
                 mouse.update();                  //IF THE MOUSE HAS NOT BEEN CAUGHT UPDATE MOUSE
             }
             
-            //CHEESE UPDATE
-            if (gotCheese) {                    //IF THE MOUSE GOT THE CHEESE
-                level_2.removeChild(cheese);    //REMOVE CHEESE FROM STAGE
-                cheese.update();                //CONTINUE UPDATING THE CHEESE
-            } else {                            //IF THE CHEESE WAS NOT EATEN
-                if (!level_2.contains(cheese))  //IF THE CHEESE IS NOT ON THE STAGE, ADD IT
-                    level_2.addChild(cheese);
-                cheese.update();                //CONTINUE UPDATING THE CHEESE
-            }
-            
+           //CHEESE UPDATE
+            cheese.update();
+             
             //CAT 1 UPDATE
             for (var cat = 0; cat < 3; cat++) {
                 cats[cat].update();

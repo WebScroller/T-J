@@ -24,15 +24,7 @@ var states;
                 mouse.update(); //IF THE MOUSE HAS NOT BEEN CAUGHT UPDATE MOUSE
             }
             //CHEESE UPDATE
-            if (gotCheese) {
-                level_2.removeChild(cheese); //REMOVE CHEESE FROM STAGE
-                cheese.update(); //CONTINUE UPDATING THE CHEESE
-            }
-            else {
-                if (!level_2.contains(cheese))
-                    level_2.addChild(cheese);
-                cheese.update(); //CONTINUE UPDATING THE CHEESE
-            }
+            cheese.update();
             //CAT 1 UPDATE
             for (var cat = 0; cat < 3; cat++) {
                 cats[cat].update();

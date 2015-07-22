@@ -6,7 +6,7 @@
         constructor(imageString: string) {
             super(imageString);
             this.dx = 5;
-            this.sound = "";
+            this.sound = "catch";
             this.reset();
             this.name = "mouseTrap";
         }

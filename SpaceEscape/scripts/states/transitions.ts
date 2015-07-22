@@ -18,10 +18,6 @@ module states {
 
         //our intro main function
         main() {
-            //instructions
-            //var instructions: string = "\n\nMove your mouse up and down \n\nand don't let Tom catch you \n\n";
-
-            console.log("Transition: " +level);
 
             transition = new createjs.Container();
                         
@@ -52,14 +48,9 @@ module states {
 
         //when the button was clicked change stage 
         private StartClicked() {
-            console.log("button press");
             stage.removeChild(transition);
-            transition.removeAllChildren();
-            
+            transition.removeAllChildren();            
             transition.removeAllEventListeners();
-            console.log("current Stage: " + futureStage);
-
-            console.log("game over: " + futureGameOver);
             currentStage = futureStage; //STATE GO AFTER CLICK BUTTON START
             gameOver = futureGameOver;
             main();

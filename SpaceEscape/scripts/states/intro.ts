@@ -19,7 +19,7 @@ module states {
         //our intro main function
         main() {
             //instructions
-            var instructions: string = "\n\nMove your mouse up and down \n\nand don't let Tom catch you \n\n";
+            var instructions: string = "\n\nMove your mouse up and down, \n\ncatch the cheese and \n\ndon't let Tom catch you \n\n";
 
             console.log("Intro");
 

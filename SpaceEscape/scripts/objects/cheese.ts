@@ -6,7 +6,7 @@
         constructor(imageString: string) {
             super(imageString);
             this.dx = 5;
-            this.sound = "energyS";
+            this.sound = "eat";
             this.reset();
             this.name = "cheese";        
         }
@@ -16,13 +16,13 @@
         //CHECK IF THE CHEESE HAS LEFT THE SCREEN, THEN RESET
         private checkBounds(): void {
             if (this.x <= 0 - this.width) {
-                gotCheese = false;
+                //gotCheese = false;
                 this.reset();
             }
         }
 
         //RESET THE CHEESE WHEN IS OUT OF STAGE
-        private reset(): void {
+        public reset(): void {
             this.y = Math.floor((Math.random() * 380) + this.height); //THE CHEESE STARTS AT A RANDOM LOCATION           
             this.x = 1800;                                            //THE CHEESE STARTS OUT OF STAGE          
         }

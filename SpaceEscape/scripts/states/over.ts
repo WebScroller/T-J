@@ -9,6 +9,12 @@ module states {
             this.main();            
         }
 
+        //UPDATE METHOD****************************************************************************************************
+        public update() {
+
+            //UPDATE BACKGROUND
+            background.update();
+        }
         //our main game function
         main() {
 

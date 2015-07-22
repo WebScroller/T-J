@@ -21,6 +21,8 @@ var managers;
                         if (lives < 2) {
                             //To know that the game is over
                             gameOver = 6;
+                            currentStage = config.GAME_OVER_STATE;
+                            main();
                         }
                         else {
                             lives--;
@@ -37,7 +39,7 @@ var managers;
                             level_1.removeAllEventListeners();
                             currentStage = config.TRANSITION; //STATE GO AFTER CLICK BUTTON START
                             level = "Level 2";
-                            instructions = "Throw spanners";
+                            instructions = "Use your mouse left click \n\n to throw spanners, but take care\n\n only works with the mousetraps";
                             gameOver = 2;
                             main();
                         }
@@ -47,11 +49,11 @@ var managers;
                             level_2.removeAllEventListeners();
                             currentStage = config.TRANSITION; //STATE GO AFTER CLICK BUTTON START
                             level = "Level 3";
-                            instructions = "Catch the whistle";
+                            instructions = "Catch the whistle to call \n\n you friend for help";
                             gameOver = 4;
                             main();
                         }
-                        gotCheese = true;
+                        cheese.reset();
                     }
                     //IF COLLISION IS BETWEEN MOUSE & WHISTLE
                     if (gameObject1.name == "mouse" && gameObject2.name == "whistle") {
@@ -75,12 +77,14 @@ var managers;
             //if the objects are close...
             if (utility.distance(p1, p2) < ((gameObject1.height * 0.5) + (gameObject2.height * 0.3))) {
                 if (gameObject2.isColliding == false) {
-                    createjs.Sound.play(gameObject1.sound);
+                    createjs.Sound.play(gameObject2.sound);
                     //IF COLLISION IS BETWEEN MOUSE AND MOUSETRAP
                     if (gameObject1.name == "mouse" && gameObject2.name == "mouseTrap") {
                         if (lives < 2) {
                             //To know that the game is over
                             gameOver = 6;
+                            currentStage = config.GAME_OVER_STATE;
+                            main();
                         }
                         else {
                             lives--;

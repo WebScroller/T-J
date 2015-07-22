@@ -78,11 +78,12 @@
     <Content Include="assets\images\playAgain.png" />
     <Content Include="assets\images\spanner.png" />
     <Content Include="assets\images\whistle.png" />
-    <Content Include="assets\sounds\energySound.wav" />
-    <Content Include="assets\sounds\explotion.wav" />
+    <Content Include="assets\sounds\dog.wav" />
+    <Content Include="assets\sounds\eatCheese.wav" />
     <Content Include="assets\sounds\gameOver.wav" />
-    <Content Include="assets\sounds\music.mp3" />
-    <Content Include="assets\sounds\plane.wav" />
+    <Content Include="assets\sounds\mouseHits.wav" />
+    <Content Include="assets\sounds\spannerKicksTrap.wav" />
+    <Content Include="assets\sounds\whistle.wav" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -6,7 +6,7 @@
         constructor(imageString: string) {
             super(imageString);
             this.dx = 7;
-            //this.sound = "energyS";
+            this.sound = "whistleS";
             this.reset();
             this.name = "whistle";
         }

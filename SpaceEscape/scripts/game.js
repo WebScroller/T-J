@@ -50,6 +50,7 @@ var level;
 var futureGameOver;
 var futureStage;
 var currentStage; // THE NUMBER OF EACH SCREEN
+var oldStage;
 var gameOver = 0;
 //OBJECT VARIABLES
 var background;
@@ -106,6 +107,15 @@ function setupStats() {
     document.body.appendChild(stats.domElement);
 }
 //MAIN GAME LOOP ACCESS 60 FPS***********************************************************************************************
+/*
+ * INTRO = GAMEOVER 0
+ * LEVEL 1 = GAMEOVER 1
+ * TRANITION = GAMEOVER 2
+ * LEVEL 2 = GAMEOVER 3
+ * TRANSITION = GAMEOVER 4
+ * LEVEL 3 = GAMEOVER 5
+ * GAME OVER = GAMEOVER 6
+ */
 function gameLoop() {
     stats.begin();
     if (gameOver == 0) {
@@ -127,8 +137,7 @@ function gameLoop() {
         garden.update();
     }
     else if (gameOver == 6) {
-        currentStage = config.GAME_OVER_STATE; //STATE GO AFTER CLICK BUTTON START
-        main();
+        over.update();
     }
     stage.update(); //update/refresh state    
     stats.end();
@@ -145,19 +154,21 @@ function main() {
             break;
         case config.LEVEL_1:
             futureGameOver = 3;
+            oldStage = config.LEVEL_1;
             futureStage = config.LEVEL_2;
             play = new states.Play();
             stage.addChild(level_1);
             break;
         case config.LEVEL_2:
+            oldStage = config.LEVEL_2;
             futureGameOver = 5;
             futureStage = config.LEVEL_3;
-            console.log("try level 2");
             kitchen = new states.Kitchen();
             level_2.addEventListener("click", kitchen.click);
             stage.addChild(level_2);
             break;
         case config.LEVEL_3:
+            oldStage = config.LEVEL_3;
             garden = new states.Garden();
             stage.addChild(level_3);
             break;
@@ -166,10 +177,20 @@ function main() {
             createjs.Sound.play("gameOverS");
             //comment sound to have less loading time
             //createjs.Sound.play("music", { "loop": -1, "volume": .1 });
-            gameOver = 2;
-            stage.removeChild(level_2);
-            level_2.removeAllChildren();
-            level_2.removeAllEventListeners();
+            gameOver = 6;
+            stage.removeAllChildren();
+            if (oldStage == config.LEVEL_1) {
+                level_1.removeAllChildren();
+                level_1.removeAllEventListeners();
+            }
+            else if (oldStage == config.LEVEL_2) {
+                level_2.removeAllChildren();
+                level_2.removeAllEventListeners();
+            }
+            else if (oldStage == config.LEVEL_3) {
+                level_3.removeAllChildren();
+                level_3.removeAllEventListeners();
+            }
             over = new states.Over();
             stage.addChild(gOver);
             break;

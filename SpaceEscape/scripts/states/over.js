@@ -8,6 +8,11 @@ var states;
         function Over() {
             this.main();
         }
+        //UPDATE METHOD****************************************************************************************************
+        Over.prototype.update = function () {
+            //UPDATE BACKGROUND
+            background.update();
+        };
         //our main game function
         Over.prototype.main = function () {
             console.log("Game is Over");

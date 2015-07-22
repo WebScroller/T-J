@@ -13,7 +13,7 @@ var objects;
         function Cheese(imageString) {
             _super.call(this, imageString);
             this.dx = 5;
-            this.sound = "energyS";
+            this.sound = "eat";
             this.reset();
             this.name = "cheese";
         }
@@ -21,7 +21,7 @@ var objects;
         //CHECK IF THE CHEESE HAS LEFT THE SCREEN, THEN RESET
         Cheese.prototype.checkBounds = function () {
             if (this.x <= 0 - this.width) {
-                gotCheese = false;
+                //gotCheese = false;
                 this.reset();
             }
         };

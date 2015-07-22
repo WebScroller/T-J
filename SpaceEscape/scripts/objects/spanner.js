@@ -13,7 +13,7 @@ var objects;
         function Spanner(imageString) {
             _super.call(this, imageString);
             this.dx = 7;
-            //this.sound = "energyS";
+            this.sound = "spannerS";
             this.reset();
             this.name = "spanner";
         }

@@ -16,7 +16,7 @@ var states;
         //our intro main function
         Intro.prototype.main = function () {
             //instructions
-            var instructions = "\n\nMove your mouse up and down \n\nand don't let Tom catch you \n\n";
+            var instructions = "\n\nMove your mouse up and down, \n\ncatch the cheese and \n\ndon't let Tom catch you \n\n";
             console.log("Intro");
             start = new createjs.Container();
             //add background

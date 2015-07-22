@@ -13,7 +13,7 @@ var objects;
         function Dog(imageString) {
             _super.call(this, imageString);
             this.dx = 4;
-            //this.sound = "energyS";
+            this.sound = "dogS";
             this.reset();
             this.name = "dog";
         }

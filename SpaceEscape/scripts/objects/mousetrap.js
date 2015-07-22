@@ -13,7 +13,7 @@ var objects;
         function MouseTrap(imageString) {
             _super.call(this, imageString);
             this.dx = 5;
-            this.sound = "";
+            this.sound = "catch";
             this.reset();
             this.name = "mouseTrap";
         }
