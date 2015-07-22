@@ -12,6 +12,7 @@
 /// <reference path="objects/catchedmouse.ts" />
 /// <reference path="objects/cheese.ts" />
 /// <reference path="objects/mousetrap.ts" />
+/// <reference path="objects/spanner.ts" />
 /// <reference path="objects/whistle.ts" />
 /// <reference path="objects/dog.ts" />
 /// <reference path="objects/cats.ts" />
@@ -53,6 +54,7 @@ var cats2 = [];
 var scoreboard;
 var whistle;
 var dog;
+var spanner;
 //BOTTON VARIABLES
 var btnPlayAgain;
 var btnPlay;
@@ -125,6 +127,7 @@ function main() {
             break;
         case config.LEVEL_2:
             kitchen = new states.Kitchen();
+            level_2.addEventListener("click", kitchen.click);
             stage.addChild(level_2);
             break;
         case config.LEVEL_3:

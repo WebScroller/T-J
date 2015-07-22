@@ -66,7 +66,7 @@
                 if (gameObject2.isColliding == false) {
                     createjs.Sound.play(gameObject1.sound);
 
-                    //IF COLLISION IS BETWEEN MOUSE & CAT
+                    //IF COLLISION IS BETWEEN MOUSE AND MOUSETRAP
                     if (gameObject1.name == "mouse" && gameObject2.name == "mouseTrap") {
                         if (scoreboard.lives < 2) {  
                             //To know that the game is over
@@ -75,6 +75,37 @@
                             scoreboard.lives--;
                             catched = true;
                         }
+                    }
+
+                }
+                gameObject2.isColliding = true;
+                return false;
+
+            } else {
+                gameObject2.isColliding = false;
+                return false;
+            }
+        }
+
+        //PUBLIC METHOD TO CHECK COLLISIONS BETWEEN SPANNER AND MOUSETRAP *********************************************************************************************
+        public checkST(gameObject1: objects.GameObject, gameObject2: objects.MouseTrap): boolean {
+            var p1: createjs.Point = new createjs.Point();
+            var p2: createjs.Point = new createjs.Point();
+            p1.x = gameObject1.x;
+            p1.y = gameObject1.y;
+
+            p2.x = gameObject2.x;
+            p2.y = gameObject2.y;
+
+
+            //if the objects are close...
+            if (utility.distance(p1, p2) < ((gameObject1.height * 0.5) + (gameObject2.height * 0.3))) {
+                if (gameObject2.isColliding == false) {
+                    createjs.Sound.play(gameObject1.sound);
+
+                    //IF COLLISION IS BETWEEN SPANNER & MOUSETRAP
+                    if (gameObject1.name == "spanner" && gameObject2.name == "mouseTrap") {
+                        gameObject2.reset();
                     }
 
                 }
@@ -108,7 +139,8 @@
                         //level_3.removeChild(gameObject2); 
                         gameObject2.reset();
                         gameObject2.isColliding = true;
-                        return true;                                               
+                        return true;       
+                                                                
                     }
 
                 }

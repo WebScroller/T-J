@@ -42,11 +42,24 @@ var states;
             for (var traps = 0; traps < 2; traps++) {
                 mouseTrap[traps].update();
                 collision.checkMT(mouse, mouseTrap[traps]);
+                if (level_2.contains(spanner)) {
+                    collision.checkST(spanner, mouseTrap[traps]);
+                }
             }
+            //SPANNER UPDATE
+            if (level_2.contains(spanner))
+                spanner.update();
             //CHECK CHEESE COLLISION
             collision.checkMC(mouse, cheese);
             //UPDATE SCOREBOARD
             scoreboard.update();
+        };
+        //CREATS SPANNER IF THE MOUSE IS CLICKED
+        Kitchen.prototype.click = function () {
+            if (!level_2.contains(spanner)) {
+                spanner = new objects.Spanner(assets.loader.getResult("spanner"));
+                level_2.addChild(spanner);
+            }
         };
         //MAIN FUNCTION*************************************************************************************
         Kitchen.prototype.main = function () {
