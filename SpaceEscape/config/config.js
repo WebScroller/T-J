@@ -6,5 +6,6 @@ var config;
     config.LEVEL_2 = 2;
     config.LEVEL_3 = 3;
     config.GAME_OVER_STATE = 4;
+    config.TRANSITION = 5;
 })(config || (config = {}));
 //# sourceMappingURL=config.js.map

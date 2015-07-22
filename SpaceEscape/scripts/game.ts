@@ -21,6 +21,7 @@
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="managers/collision.ts" />
 
+/// <reference path="states/transitions.ts" />
 /// <reference path="states/intro.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/kitchen.ts" />
@@ -42,6 +43,7 @@ var level_1: createjs.Container;
 var level_2: createjs.Container;
 var level_3: createjs.Container;
 var gOver: createjs.Container; 
+var transition: createjs.Container;
 
 
 //GAME STATES VARIABLES (CLASSES)
@@ -50,9 +52,15 @@ var play: states.Play;
 var kitchen: states.Kitchen;
 var garden: states.Garden;
 var over: states.Over;
+var transitions: states.Transitions;
 
+//GAME TRANSITION VARIABLES
+var instructions: string;
+var level: string;
 
 //HELP KNOW YOUR CURRENT STAGE
+var futureGameOver: number;
+var futureStage: number;
 var currentStage: number;         // THE NUMBER OF EACH SCREEN
 var gameOver: number = 0;
 
@@ -69,6 +77,8 @@ var scoreboard: objects.ScoreBord;
 var whistle: objects.Whistle;
 var dog: objects.Dog;
 var spanner: objects.Spanner;
+var score: number = 0;
+var lives: number = 5;
 
 
 //BOTTON VARIABLES
@@ -132,14 +142,21 @@ function gameLoop() {
     stats.begin();
     if (gameOver == 0) {
         intro.update();
-    }else if (gameOver == 1) {        
-       //play.update();
-       //garden.update();
+    } else if (gameOver == 1) {        
+        play.update();
+      
+    } else if (gameOver == 2) {
+        transitions.update();
+    } else if (gameOver == 3) {
         kitchen.update();
-   } else if (gameOver == 4) {
-       currentStage = config.GAME_OVER_STATE //STATE GO AFTER CLICK BUTTON START
+    } else if (gameOver == 4) {
+        transitions.update();
+    } else if (gameOver == 5) {
+        garden.update();
+    } else if (gameOver == 6) {
+        currentStage = config.GAME_OVER_STATE //STATE GO AFTER CLICK BUTTON START
         main();
-    }     
+    }
     stage.update(); //update/refresh state    
     stats.end();
 }
@@ -149,18 +166,24 @@ function gameLoop() {
 function main() {
     switch (currentStage) {
         case config.INRO_STATE:
+            score = 0;
+            lives = 5;
             // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
             intro = new states.Intro();
             stage.addChild(start);
         break;
 
         case config.LEVEL_1:
+            futureGameOver = 3;
+            futureStage = config.LEVEL_2;
             play = new states.Play();
-            stage.addChild(level_1);            
+            stage.addChild(level_1);                   
             break;
 
         case config.LEVEL_2:
-            
+            futureGameOver =  5;
+            futureStage = config.LEVEL_3;
+            console.log("try level 2");
             kitchen = new states.Kitchen();
             level_2.addEventListener("click", kitchen.click);
             stage.addChild(level_2);
@@ -184,6 +207,10 @@ function main() {
             stage.addChild(gOver);
             break;
 
+        case config.TRANSITION:
+            transitions = new states.Transitions();
+            stage.addChild(transition);
+            break;
     }
 
 }

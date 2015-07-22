@@ -6,5 +6,6 @@
     export const LEVEL_2: number = 2;
     export const LEVEL_3: number = 3;
     export const GAME_OVER_STATE: number = 4;
+    export const TRANSITION: number = 5;
 
 }

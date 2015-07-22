@@ -23,18 +23,40 @@
 
                 //IF COLLISION IS BETWEEN MOUSE & CAT
                 if (gameObject1.name == "mouse" && gameObject2.name == "cat") {
-                    if (scoreboard.lives < 2) {  
+                    if (lives < 2) {  
                         //To know that the game is over
-                        gameOver = 4;
+                        gameOver = 6;
                     } else {
-                        scoreboard.lives--;
+                        lives--;
                         catched = true;
                     }
                 }
 
                 //IF COLLISION IS BETWEEN MOUSE & CHEESE
                 if (gameObject1.name == "mouse" && gameObject2.name == "cheese") {
-                    scoreboard.score += 100;
+                    score += 100;
+                    //TO TRANSITION LEVEL 2
+                    if (score == 500){
+                        stage.removeChild(level_1);
+                        level_1.removeAllChildren();
+                        level_1.removeAllEventListeners();
+                        currentStage = config.TRANSITION //STATE GO AFTER CLICK BUTTON START
+                        level = "Level 2"
+                        instructions = "Throw spanners"
+                        gameOver = 2;
+                        main();
+                        //TO  TRANSITION LEVEL 3
+                    } else if(score == 1000){
+                        stage.removeChild(level_2);
+                        level_2.removeAllChildren();
+                        level_2.removeAllEventListeners();
+                        currentStage = config.TRANSITION //STATE GO AFTER CLICK BUTTON START
+                        level = "Level 3"
+                        instructions = "Catch the whistle"
+                        gameOver = 4;
+                        main();
+                    }
+
                     gotCheese = true;
                 }
                 
@@ -68,11 +90,11 @@
 
                     //IF COLLISION IS BETWEEN MOUSE AND MOUSETRAP
                     if (gameObject1.name == "mouse" && gameObject2.name == "mouseTrap") {
-                        if (scoreboard.lives < 2) {  
+                        if (lives < 2) {  
                             //To know that the game is over
-                            gameOver = 4;
+                            gameOver = 6;
                         } else {
-                            scoreboard.lives--;
+                            lives--;
                             catched = true;
                         }
                     }

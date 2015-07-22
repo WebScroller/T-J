@@ -124,6 +124,7 @@
     <TypeScriptCompile Include="scripts\objects\scoreboard.ts" />
     <TypeScriptCompile Include="scripts\objects\background.ts" />
     <TypeScriptCompile Include="scripts\objects\spanner.ts" />
+    <TypeScriptCompile Include="scripts\states\transitions.ts" />
     <TypeScriptCompile Include="scripts\objects\whistle.ts" />
     <TypeScriptCompile Include="scripts\states\garden.ts" />
     <TypeScriptCompile Include="scripts\states\intro.ts" />

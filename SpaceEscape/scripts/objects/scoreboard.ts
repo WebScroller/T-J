@@ -1,8 +1,6 @@
 ﻿module objects {
     export class ScoreBord {
-        //public properties 
-        public score: number = 0;
-        public lives: number = 5;
+        //public properties
 
         public scoreLabel: createjs.Text;
         public livesLabel: createjs.Text;
@@ -18,8 +16,8 @@
 
         //update the score bord
         public update() {
-            this.livesLabel.text = "Lives: " + this.lives;
-            this.scoreLabel.text = "Score: " + this.score;
+            this.livesLabel.text = "Lives: " + lives;
+            this.scoreLabel.text = "Score: " + score;
         }
     }
 }

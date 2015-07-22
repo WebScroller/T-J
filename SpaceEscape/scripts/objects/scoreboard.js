@@ -3,9 +3,6 @@ var objects;
     var ScoreBord = (function () {
         //Contrsuctor***************************  
         function ScoreBord() {
-            //public properties 
-            this.score = 0;
-            this.lives = 5;
             this.livesLabel = new createjs.Text("Lives:", "40px Consolas", "#FF0404");
             this.livesLabel.shadow = new createjs.Shadow("#005C57", 5, 5, 10);
             this.scoreLabel = new createjs.Text("Score:", "40px Consolas", "#FF0404");
@@ -14,8 +11,8 @@ var objects;
         }
         //update the score bord
         ScoreBord.prototype.update = function () {
-            this.livesLabel.text = "Lives: " + this.lives;
-            this.scoreLabel.text = "Score: " + this.score;
+            this.livesLabel.text = "Lives: " + lives;
+            this.scoreLabel.text = "Score: " + score;
         };
         return ScoreBord;
     })();

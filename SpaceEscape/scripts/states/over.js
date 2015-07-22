@@ -22,7 +22,7 @@ var states;
             labelText.y = 70;
             gOver.addChild(labelText);
             //add score
-            labelScore = new objects.Label("Your score is: " + scoreboard.score, "40px");
+            labelScore = new objects.Label("Your score is: " + score, "40px");
             labelScore.shadow = new createjs.Shadow("#005C57", 5, 5, 10);
             labelScore.x = 120;
             labelScore.y = 200;
