@@ -83,6 +83,7 @@
     <Content Include="assets\sounds\gameOver.wav" />
     <Content Include="assets\sounds\mouseHits.wav" />
     <Content Include="assets\sounds\spannerKicksTrap.wav" />
+    <Content Include="assets\sounds\T&amp;J.mp3" />
     <Content Include="assets\sounds\whistle.wav" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">

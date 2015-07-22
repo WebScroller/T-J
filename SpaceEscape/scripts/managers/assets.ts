@@ -36,7 +36,7 @@
                 { id: "dogS", src: "assets/sounds/dog.wav" },
                 { id: "spannerS", src: "assets/sounds/spannerKicksTrap.wav" },
                 { id: "gameOverS", src: "assets/sounds/gameOver.wav" },
-               // { id: "music", src: "assets/sounds/music.mp3" },
+                { id: "music", src: "assets/sounds/T&J.mp3" },
             ]);
         }
     }

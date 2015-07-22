@@ -176,7 +176,7 @@ function main() {
         case config.INRO_STATE:
             score = 0;
             lives = 5;
-            // createjs.Sound.play("music", { "loop": -1,"volume": .1 });
+            createjs.Sound.play("music", { "loop": -1,"volume": .2 });
             intro = new states.Intro();
             stage.addChild(start);
         break;
@@ -207,8 +207,6 @@ function main() {
         case config.GAME_OVER_STATE:
             createjs.Sound.stop();
             createjs.Sound.play("gameOverS");
-            //comment sound to have less loading time
-            //createjs.Sound.play("music", { "loop": -1, "volume": .1 });
             gameOver = 6;
             stage.removeAllChildren();
             if (oldStage == config.LEVEL_1){
