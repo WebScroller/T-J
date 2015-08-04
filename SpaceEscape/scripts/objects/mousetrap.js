@@ -12,7 +12,7 @@ var objects;
         //CONSTRUCTOR********************************************************************
         function MouseTrap(imageString) {
             _super.call(this, imageString);
-            this.dx = 5;
+            this.dx = 3;
             this.sound = "catch";
             this.reset();
             this.name = "mouseTrap";
@@ -26,7 +26,7 @@ var objects;
         };
         //RESET THE MOUSE TRAP WHEN IS OUT OF STAGE
         MouseTrap.prototype.reset = function () {
-            this.y = Math.floor((Math.random() * 480));
+            this.y = Math.floor((Math.random() * 138) + 342);
             this.x = Math.floor(Math.random() * 200) + 640;
             this.x = 640; //start cat off stage
             this.dy = Math.floor(Math.random() * 4) - 2;

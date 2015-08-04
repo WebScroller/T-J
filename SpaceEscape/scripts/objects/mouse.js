@@ -17,7 +17,7 @@ var objects;
         }
         //public methods************************************
         Mouse.prototype.update = function () {
-            this.y = stage.mouseY; //position of the plain over the mouse
+            this.y = stage.mouseY + 5; //position of the plain over the mouse
         };
         return Mouse;
     })(objects.GameObject);

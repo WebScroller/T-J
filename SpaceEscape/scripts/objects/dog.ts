@@ -23,7 +23,7 @@
 
         //RESET THE DOG WHEN IS OUT OF STAGE
         private reset(): void {
-            this.y = Math.floor((Math.random() * 380) + this.height); //THE DOG STARTS AT A RANDOM LOCATION           
+            this.y = Math.floor((Math.random() * 330) + 150); //THE DOG STARTS AT A RANDOM LOCATION           
             this.x = -80;                                            //THE DOG STARTS OUT OF STAGE    
             level_3.removeChild(dog);      
         }
